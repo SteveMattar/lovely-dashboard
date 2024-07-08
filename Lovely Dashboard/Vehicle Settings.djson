@@ -1523,7 +1523,7 @@
           "Bindings": {
             "Visible": {
               "Formula": {
-                "Expression": "return ( \r\n\t$prop('DataCorePlugin.CurrentGame').startsWith('F120') ||\r\n\t( $prop('DataCorePlugin.GameData.CarClass') == 'dallarair18' ) || \r\n\t$prop('DataCorePlugin.GameData.CarId') == 'dallarair18'\r\n) ? false : true;",
+                "Expression": "return (\r\n\t( $prop('DataCorePlugin.GameData.CarClass') == 'dallarair18' ) || \r\n\t$prop('DataCorePlugin.GameData.CarId') == 'dallarair18'\r\n) ? false : true;",
                 "Interpreter": 1,
                 "JSExt": 1
               },
