@@ -1,0 +1,304 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 480,
+  "BaseWidth": 850,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "c3c084a5-1613-4627-9ee5-32bac9a74371",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 480.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.3.1",
+    "Width": 850.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "Height": 480.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 32.0,
+          "Name": "Background",
+          "RenderingSkip": 3,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "BorderStyle": {
+            "Bindings": {
+              "BorderColor": {
+                "Formula": {
+                  "Expression": "return ld_theme('ld_uiLine');",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusBottomLeft": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusBottomRight": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
+            "BorderBottom": 1,
+            "BorderLeft": 1,
+            "BorderRight": 1,
+            "BorderTop": 1,
+            "RadiusBottomLeft": 45,
+            "RadiusBottomRight": 45,
+            "RadiusTopLeft": 45,
+            "RadiusTopRight": 45
+          },
+          "Height": 465.0,
+          "IsRectangleItem": true,
+          "Left": 5.0,
+          "MinimumRefreshIntervalMS": 32.0,
+          "Name": "Background2",
+          "RenderingSkip": 3,
+          "Top": 7.5,
+          "Visible": true,
+          "Width": 840.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusBottomRight": 8,
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 12.0,
+              "FontWeight": "Bold",
+              "Height": 18.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 385.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TITLE",
+              "RenderingSkip": 0,
+              "Text": "BITE POINT",
+              "TextColor": "#FFFFFFFF",
+              "Top": 2.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 80.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0.00%",
+                  "Formula": {
+                    "Expression": "return ( $prop('JoystickPlugin.GWT-01_gamepad_Slider0')/65535 )",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 42.0,
+              "FontWeight": "Bold",
+              "Height": 200.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 10.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem",
+              "RenderingSkip": 0,
+              "Text": "0.00%",
+              "TextColor": "#FFFFFFFF",
+              "Top": 140.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 830.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 150.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Instructions2",
+              "RenderingSkip": 0,
+              "Text": "Press the joystick to save and exit",
+              "TextColor": "#FFFFFFFF",
+              "TextWrapping": 0,
+              "Top": 425.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 540.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 48.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 160.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Instructions",
+              "RenderingSkip": 0,
+              "Text": "Fully depress the Slave Clutch (Left) while simultaneosuly rotating the joystick to set the desired Clutch Bite Point",
+              "TextColor": "#FFFFFFFF",
+              "TextWrapping": 0,
+              "Top": 52.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 540.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "BitePoint",
+          "RenderingSkip": 0,
+          "Repetitions": 0,
+          "Visible": true
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "d2b441ce-87fd-4317-9636-069e807d7d45"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      }
+    ]
+  },
+  "Version": 2
+}

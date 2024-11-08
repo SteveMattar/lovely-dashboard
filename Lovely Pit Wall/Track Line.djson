@@ -1,0 +1,219 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 20,
+  "BaseWidth": 770,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "8d1c13e5-19fb-40a0-850c-023677dfed36",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 20.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.2.7b3",
+    "Width": 770.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF292929",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') ) ? '#FFFFE04C' : '#FF262626'",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( ld_trackData() ) ? false : true",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "Height": 10.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Track",
+          "RenderingSkip": 16,
+          "Top": 5.0,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Repetitions": {
+              "Formula": {
+                "Expression": "return ld_sectorCount()",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( ld_trackData() ) ? true : false",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF292929",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "if ( ld_getSim() == 'ACC' ) {\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow'+repeatindex()) && ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') ) ) ? '#FFFFE04C' : '#FF262626'\r\n} else {\r\n\treturn ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') ) ? '#FFFFE04C' : '#FF262626'\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Left": {
+                  "Formula": {
+                    "Expression": "if ( repeatindex() <= 1 ) {\r\n\treturn 0\r\n} else {\r\n\treturn Math.round( 770 * ld_trackData()['sector'][ repeatindex()-2 ]['marker'] )\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Width": {
+                  "Formula": {
+                    "Expression": "if ( !ld_trackData() ) {\r\n\treturn 0\r\n} else if (repeatindex() <= 1 ) {\r\n\treturn Math.round( 770 * ld_trackData()['sector'][ repeatindex()-1 ]['marker'] )\r\n} else {\r\n\treturn Math.round( 770 * ld_trackData()['sector'][ repeatindex()-1 ]['marker'] - 770 * ld_trackData()['sector'][ repeatindex()-2 ]['marker'] )\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 10.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Sector",
+              "RenderingSkip": 0,
+              "Top": 5.0,
+              "Visible": true,
+              "Width": 200.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 160.0,
+          "Name": "Layer",
+          "RenderingSkip": 16,
+          "RepeatTopOffset": 0.0,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFFFFF",
+          "Bindings": {
+            "Left": {
+              "Formula": {
+                "Expression": "return Math.round(767 * $prop('TrackPositionPercent'))",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 1,
+            "RadiusBottomRight": 1,
+            "RadiusTopLeft": 1,
+            "RadiusTopRight": 1
+          },
+          "Height": 20.0,
+          "IsRectangleItem": true,
+          "Left": 20.0,
+          "MinimumRefreshIntervalMS": 10.0,
+          "Name": "Marker",
+          "RenderingSkip": 1,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 3.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "810d0b64-4747-438c-9b83-81ec7ce98b62"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      }
+    ]
+  },
+  "Version": 2
+}

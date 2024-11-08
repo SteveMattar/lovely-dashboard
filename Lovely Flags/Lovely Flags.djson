@@ -1,0 +1,1484 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 480,
+  "BaseWidth": 850,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "5766db00-af78-4c31-b488-0bf0c351b761",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 350,
+      "Length": 1573,
+      "MD5": "15b597e861b5ab618c3af53041765078",
+      "Modified": false,
+      "Name": "flag-checkered",
+      "Optimized": true,
+      "Width": 770
+    },
+    {
+      "Extension": ".png",
+      "Height": 120,
+      "Length": 3146,
+      "MD5": "608b3d577d86e813e4b91160ceaeeb21",
+      "Modified": false,
+      "Name": "Simhub Update",
+      "Optimized": true,
+      "Width": 148
+    },
+    {
+      "Extension": ".png",
+      "Length": 1119,
+      "MD5": "fa2613d447d9cd741ec4d12a2403cea4",
+      "Modified": false,
+      "Name": "Analytics Off",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 38,
+      "Length": 1640,
+      "MD5": "d4bbbe3aabbf7d886252e4b0eb7d9981",
+      "Modified": false,
+      "Name": "Analytics On",
+      "Optimized": true,
+      "Width": 65
+    },
+    {
+      "Extension": ".png",
+      "Height": 140,
+      "Length": 4076,
+      "MD5": "e61c1d0455b2f7cc595ac445488dd218",
+      "Modified": false,
+      "Name": "Plugin Update",
+      "Optimized": true,
+      "Width": 127
+    },
+    {
+      "Extension": ".png",
+      "Height": 512,
+      "Length": 10169,
+      "MD5": "99798e89a9e22d8791a6a62f38cebee8",
+      "Modified": false,
+      "Name": "lr-team-icon-med",
+      "Optimized": true,
+      "Width": 512
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "Author": "Constantinos Demetriadis - Lovely Sim Racing",
+    "EnableOnDashboardMessaging": true,
+    "Height": 480.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      1
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 1,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 4.0,
+    "SimHubVersion": "9.5.0",
+    "Title": "Lovely Flags",
+    "Width": 850.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": true,
+      "InGameScreen": false,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "return ld_analytics('Idle')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "ClickThrough": false,
+          "Height": 1.0,
+          "IsFreezed": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 100000.0,
+          "Name": "Analytics",
+          "RenderingSkip": 10000,
+          "StartAddress": "",
+          "Top": 480.0,
+          "Visible": true,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "BorderStyle": {
+            "Bindings": {
+              "RadiusBottomLeft": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')+5;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusBottomRight": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')+5;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')+5;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')+5;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
+            "RadiusBottomLeft": 50,
+            "RadiusBottomRight": 50,
+            "RadiusTopLeft": 50,
+            "RadiusTopRight": 50
+          },
+          "Height": 480.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 100000.0,
+          "Name": "Background",
+          "RenderingSkip": 10000,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF141414",
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 100000.0,
+          "Name": "Ready",
+          "RenderingSkip": 10000,
+          "Text": "READY",
+          "TextColor": "#FF696969",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+          "BackgroundColor": "#FF141414",
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Format": "HH:mm",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 1000.0,
+          "Name": "Time2",
+          "RenderingSkip": 100,
+          "TextColor": "#FF696969",
+          "TextPadding": {
+            "PaddingBottom": 65
+          },
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "return ld_displayVersion();",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "Height": 25.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 225.0,
+          "MinimumRefreshIntervalMS": 100000.0,
+          "Name": "Version",
+          "RenderingSkip": 10000,
+          "Text": "Lovely Flags vX.X.X",
+          "TextColor": "#FFFFFFFF",
+          "Top": 400.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 400.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFF0000",
+          "Bindings": {
+            "Text": {
+              "FormatString": "",
+              "Formula": {
+                "Expression": "const json_version = downloadstringasync(320,'https://raw.githubusercontent.com/Lovely-Sim-Racing/lovely-dashboard/main/version.json');\r\n\r\nreturn ld_getVersion(json_version);",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "const json_version = downloadstringasync(320,'https://raw.githubusercontent.com/Lovely-Sim-Racing/lovely-dashboard/main/version.json');\r\n\r\nreturn ( ld_getVersion(json_version) != false ) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "FontWeight": "Bold",
+          "Height": 25.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 175.0,
+          "MinimumRefreshIntervalMS": 640.0,
+          "Name": "New Version Alert",
+          "RenderingSkip": 64,
+          "Text": "NEW VERSION AVAILABLE: X.X.XbX - Visit j76.me/LSRDiscord",
+          "TextColor": "#FFFFFFFF",
+          "Top": 400.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 500.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+          "BackgroundColor": "#FF141414",
+          "BorderStyle": {
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Format": "HH:mm",
+          "Height": 50.0,
+          "HorizontalAlignment": 1,
+          "IsFreezed": true,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 1000.0,
+          "Name": "Time",
+          "RenderingSkip": 100,
+          "TextColor": "#FFFFFFFF",
+          "Top": 20.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 100.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": false,
+          "FileName": "Next Race Large.djson",
+          "FreezePageChanges": false,
+          "Height": 50.0,
+          "InitialScreenIndex": 0,
+          "IsFreezed": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Next Race",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "RenderingSkip": 0,
+          "Top": 20.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "AutoSizeScale": 0.08,
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 40.96,
+          "Image": "lr-team-icon-med",
+          "IsFreezed": true,
+          "Left": 404.52,
+          "MinimumRefreshIntervalMS": 100000.0,
+          "Name": "ImageItem2",
+          "RenderingSkip": 10000,
+          "Top": 350.0,
+          "Visible": true,
+          "Width": 40.96
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Image": {
+              "Formula": {
+                "Expression": "return ($prop('LovelyPlugin.ld_Analytics')) ? 'Analytics On' : 'Analytics Off';",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Height": 38.0,
+          "Image": "Analytics On",
+          "IsFreezed": true,
+          "Left": 60.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Analytics2",
+          "RenderingSkip": 0,
+          "Top": 382.0,
+          "Visible": true,
+          "Width": 65.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Idle",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "c1774fb9-dea8-4604-8cff-416e0869e6e6"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WebPageItem, SimHub.Plugins",
+          "AllowTransparency": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "StartAddress": {
+              "Formula": {
+                "Expression": "return ld_analytics('Primary')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "ClickThrough": false,
+          "Height": 1.0,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 81920.0,
+          "Name": "Analytics",
+          "RenderingSkip": 8192,
+          "StartAddress": "",
+          "Top": 480.0,
+          "Visible": true,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "BorderStyle": {
+            "Bindings": {
+              "RadiusBottomLeft": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')+5;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusBottomRight": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')+5;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusTopLeft": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')+5;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              },
+              "RadiusTopRight": {
+                "Formula": {
+                  "Expression": "return $prop('LovelyPlugin.ld_UIRadius')+5;",
+                  "Interpreter": 1,
+                  "JSExt": 1
+                },
+                "Mode": 2
+              }
+            },
+            "RadiusBottomLeft": 50,
+            "RadiusBottomRight": 50,
+            "RadiusTopLeft": 50,
+            "RadiusTopRight": 50
+          },
+          "Height": 480.0,
+          "IsRectangleItem": true,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 100000.0,
+          "Name": "Background",
+          "RenderingSkip": 10000,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF141414",
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 81920.0,
+          "Name": "Ready",
+          "RenderingSkip": 8192,
+          "Text": "READY",
+          "TextColor": "#FF696969",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFFFFF",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_flagWhite')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Text": {
+              "Formula": {
+                "Expression": "if ( ld_getSim() == 'ACC' && $prop('DataCorePlugin.GameRawData.Graphics.FlagsDetails.IsACC_WHITE_FLAG') ) {\r\n\treturn 'SLOW CAR';\r\n} else if ( ld_getSim() == 'ACC' && $prop('DataCorePlugin.GameRawData.Graphics.globalWhite') ) {\r\n\treturn 'FINAL LAP';\r\n} else {\r\n\treturn '';\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "[DataCorePlugin.GameData.Flag_White]"
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "Bold",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "White",
+          "RenderingSkip": 32,
+          "Text": "Text",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFF8A00",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[Flag_Orange]"
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Orange",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": "ORANGE",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[Flag_Checkered]"
+              },
+              "Mode": 2
+            }
+          },
+          "Height": 350.0,
+          "Image": "flag-checkered",
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Checkered",
+          "RenderingSkip": 32,
+          "Top": 90.0,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[Flag_Black]"
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Black",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": "BLACK",
+          "TextColor": "#FFFF0000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF00C401",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[Flag_Green]"
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Green",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": "GREEN",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF2B98FB",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "[Flag_Blue]"
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Blue",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": "BLUE",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FF000000",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\r\n\treturn 0\r\n\r\n} else {\r\n\r\n\tif ($prop('GameRawData.Graphics.globalYellow1')==1 || $prop('GameRawData.Graphics.globalYellow2')==1 || $prop('GameRawData.Graphics.globalYellow3')==1 ) {\r\n\t\treturn 1\r\n\t} else {\r\n\t\treturn 0\r\n\t}\r\n\t\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Yellow BG",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": " ",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\treturn 0\r\n} else {\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow1') ) ? 1 : 0\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Yellow S1",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": "1",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 260.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\treturn 0\r\n} else {\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow2') ) ? 1 : 0\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 295.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Yellow S2",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": "2",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 260.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( $prop('DataCorePlugin.CurrentGame') == 'IRacing' ) {\r\n\treturn 0\r\n} else {\r\n\treturn ( $prop('GameRawData.Graphics.globalYellow3') ) ? 1 : 0\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FF000000",
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 550.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Yellow S3",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": "3",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 260.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "if ( ld_getSim() == 'ACC' ) {\r\n\treturn 'DOUBLE YELLOW';\r\n} else if ( ld_getSim() == 'AC' ) {\r\n\treturn 'YELLOW';\r\n} else {\r\n\treturn '';\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "if ( ld_getSim() == 'IRacing' ) {\r\n\treturn ( $prop('Flag_Yellow') || $prop('GameRawData.Graphics.globalYellow') ) ? true : false\r\n} else if ( ld_getSim() == 'ACC' ) {\r\n\treturn ( $prop('Flag_Yellow') && $prop('DataCorePlugin.GameRawData.Graphics.FlagsDetails.IsACC_YELLOW_FLAG') ) ? true : false\r\n} else if ( ld_getSim() == 'AC' ) {\r\n\treturn ( $prop('Flag_Yellow') ) ? true : false\r\n} else {\r\n\treturn $prop('Flag_Yellow');\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "ExtraBlack",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Global Yellow",
+          "RenderingSkip": 32,
+          "ShadowColor": "#FF2B98FB",
+          "Text": " DOUBLE YELLOW",
+          "TextColor": "#FF000000",
+          "TextWrapping": 0,
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==1 && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')>=0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FFFFE04C",
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "Bold",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "SC",
+          "RenderingSkip": 32,
+          "Text": "SAFETY CAR",
+          "TextColor": "#FF000000",
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFE04C",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "if ($prop('DataCorePlugin.CurrentGame').startsWith('F120')) {\r\n\r\n\treturn ($prop('DataCorePlugin.GameRawData.PacketSessionData.m_safetyCarStatus')==2 && $prop('DataCorePlugin.GameRawData.PlayerLapData.m_safetyCarDelta')>=0)\r\n\t\r\n\r\n} else {\r\n\r\n\treturn 0\r\n\t\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "BorderColor": "#FFFFE04C",
+            "RadiusBottomLeft": 30,
+            "RadiusBottomRight": 30,
+            "RadiusTopLeft": 30,
+            "RadiusTopRight": 30
+          },
+          "Font": "Roboto",
+          "FontSize": 100.0,
+          "FontWeight": "Bold",
+          "Height": 350.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "VSC",
+          "RenderingSkip": 32,
+          "Text": "VIRTUAL SAFETY CAR",
+          "TextColor": "#FF000000",
+          "TextWrapping": 0,
+          "Top": 90.0,
+          "VerticalAlignment": 1,
+          "Visible": false,
+          "Width": 770.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+          "BackgroundColor": "#FF141414",
+          "BorderStyle": {
+            "RadiusBottomLeft": 10,
+            "RadiusBottomRight": 10,
+            "RadiusTopLeft": 10,
+            "RadiusTopRight": 10
+          },
+          "Font": "Roboto",
+          "FontSize": 30.0,
+          "FontWeight": "Bold",
+          "Format": "HH:mm",
+          "Height": 50.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 640.0,
+          "Name": "Time",
+          "RenderingSkip": 64,
+          "TextColor": "#FFFFFFFF",
+          "Top": 20.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 100.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "EnableScreenRolesAndActivation": false,
+          "FileName": "Next Race Large.djson",
+          "FreezePageChanges": false,
+          "Height": 50.0,
+          "InitialScreenIndex": 0,
+          "Left": 40.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Next Race",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "RenderingSkip": 0,
+          "Top": 20.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 770.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Primary",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "5a65307b-d16b-4ce6-8ed4-7ad3e42c11ca"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": false,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": true,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomLeft": {
+                    "Formula": {
+                      "Expression": "return $prop('LovelyPlugin.ld_UIRadius') + 5",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  },
+                  "RadiusBottomRight": {
+                    "Formula": {
+                      "Expression": "return $prop('LovelyPlugin.ld_UIRadius') + 5",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  },
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "return $prop('LovelyPlugin.ld_UIRadius') + 5",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  },
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "return $prop('LovelyPlugin.ld_UIRadius') + 5",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 50,
+                "RadiusBottomRight": 50,
+                "RadiusTopLeft": 50,
+                "RadiusTopRight": 50
+              },
+              "Height": 480.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 81920.0,
+              "Name": "Background",
+              "RenderingSkip": 8192,
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 850.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "if ( !$prop('LovelyPlugin.Version') ) {\r\n\treturn \"The \" + $prop('variable.folderName') + \" v\" + $prop('variable.dashVer') + \" requires the use of the Lovely Plugin, please visit the official website to download it.\\n\\nVisit: lsr.gg/plugin\";\r\n} else {\r\n\treturn \"The \" + $prop('variable.folderName') + \" v\" + $prop('variable.dashVer') + \" requires a newer version of the Lovely Plugin, please visit the official website to download it.\\n\\nVisit: lsr.gg/plugin\";\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "Height": 120.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 219.0,
+              "MinimumRefreshIntervalMS": 81920.0,
+              "Name": "Version",
+              "RenderingSkip": 8192,
+              "Text": "Update Note",
+              "TextColor": "#FFFFFFFF",
+              "TextWrapping": 0,
+              "Top": 292.0,
+              "VerticalAlignment": 0,
+              "Visible": true,
+              "Width": 412.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF0000",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "if ( !$prop('LovelyPlugin.Version') ) {\r\n\treturn 'LOVELY PLUGIN REQUIRED';\r\n} else {\r\n\treturn 'LOVELY PLUGIN UPDATE REQUIRED: v' + $prop('variable.pluginVer') + '+';\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 10,
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 245.0,
+              "MinimumRefreshIntervalMS": 81920.0,
+              "Name": "New Version Alert",
+              "RenderingSkip": 8192,
+              "Text": "LOVELY PLUGIN UPDATE REQUIRED: vX.X.X.X+",
+              "TextColor": "#FFFFFFFF",
+              "Top": 248.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 360.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 140.0,
+              "Image": "Plugin Update",
+              "Left": 371.0,
+              "MinimumRefreshIntervalMS": 81920.0,
+              "Name": "ImageItem",
+              "RenderingSkip": 8192,
+              "Top": 91.0,
+              "Visible": true,
+              "Width": 127.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 81920.0,
+          "Name": "Layer",
+          "RenderingSkip": 8192,
+          "Repetitions": 0,
+          "Visible": true
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Lovely Plugin",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": "if ( !$prop('LovelyPlugin.Version') ) {\r\n\treturn true;\r\n}\r\n\r\nvar currentVer = $prop('LovelyPlugin.Version');\r\nvar minVer = pluginVer;\r\n\r\nif ( ld_compareVersions( currentVer, minVer ) == '-1') {\r\n\treturn true;\r\n} else {\r\n\treturn false;\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+        "Interpreter": 1,
+        "JSExt": 1
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": "if ( !$prop('LovelyPlugin.Version') ) {\r\n\treturn true;\r\n}\r\n\r\nvar currentVer = $prop('LovelyPlugin.Version');\r\nvar minVer = $prop('variable.pluginVer');\r\n\r\nif ( compareversions( currentVer, minVer ) == '-1') {\r\n\treturn true;\r\n} else {\r\n\treturn false;\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1"
+      },
+      "ScreenId": "4f0c4756-8c73-451c-9cd1-2b4cd940a53a"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": false,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": true,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "BorderStyle": {
+                "Bindings": {
+                  "RadiusBottomLeft": {
+                    "Formula": {
+                      "Expression": "return $prop('LovelyPlugin.ld_UIRadius') + 5",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  },
+                  "RadiusBottomRight": {
+                    "Formula": {
+                      "Expression": "return $prop('LovelyPlugin.ld_UIRadius') + 5",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  },
+                  "RadiusTopLeft": {
+                    "Formula": {
+                      "Expression": "return $prop('LovelyPlugin.ld_UIRadius') + 5",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  },
+                  "RadiusTopRight": {
+                    "Formula": {
+                      "Expression": "return $prop('LovelyPlugin.ld_UIRadius') + 5",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "RadiusBottomLeft": 50,
+                "RadiusBottomRight": 50,
+                "RadiusTopLeft": 50,
+                "RadiusTopRight": 50
+              },
+              "Height": 480.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Background",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 850.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return \"The \" + $prop('variable.folderName') + \" v\" + $prop('variable.dashVer') + \" requires a newer version of SimHub, please visit the official website to download it.\\n\\nvisit: lsr.gg/simhub\"",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "Height": 80.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 219.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Version",
+              "RenderingSkip": 0,
+              "Text": "Update Note",
+              "TextColor": "#FFFFFFFF",
+              "TextWrapping": 0,
+              "Top": 292.0,
+              "VerticalAlignment": 0,
+              "Visible": true,
+              "Width": 412.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF0000",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "return 'SIMHUB UPDATE REQUIRED: v' + $prop('variable.shVer') + ' or higher'",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 10,
+                "RadiusBottomRight": 10,
+                "RadiusTopLeft": 10,
+                "RadiusTopRight": 10
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 245.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "New Version Alert",
+              "RenderingSkip": 0,
+              "Text": "SIMHUB UPDATE REQUIRED: vX.X.X",
+              "TextColor": "#FFFFFFFF",
+              "Top": 248.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 360.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 120.0,
+              "Image": "Simhub Update",
+              "Left": 350.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "ImageItem",
+              "RenderingSkip": 0,
+              "Top": 108.0,
+              "Visible": true,
+              "Width": 148.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 81920.0,
+          "Name": "Layer",
+          "RenderingSkip": 8192,
+          "Repetitions": 0,
+          "Visible": true
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Simhub",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": "var currentVer = $prop('DataCorePlugin.SimHubVersion');\r\nvar minVer = shVer;\r\n\r\nif ( ld_compareVersions( currentVer, minVer ) == '-1') {\r\n\treturn true\r\n} else {\r\n\treturn false\r\n}\r\n\r\n// currentVer = latestVer : 0\r\n// currentVer > latestVer : 1\r\n// currentVer < latestVer : -1",
+        "Interpreter": 1,
+        "JSExt": 1
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "e1621519-ffd5-48e3-bf7e-be7b776eafdd"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": true,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
+        "ValueExpression": {
+          "Expression": "'LovelyFlags'"
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": true,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
+        "ValueExpression": {
+          "Expression": "'Lovely Flags'"
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
+        "ValueExpression": {
+          "Expression": "return eval($prop('variable.dashName')+'Ver');",
+          "Interpreter": 1,
+          "JSExt": 1
+        },
+        "VariableName": "dashVer"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
+        "ValueExpression": {
+          "Expression": "return pluginVer",
+          "Interpreter": 1,
+          "JSExt": 1
+        },
+        "VariableName": "pluginVer"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": false,
+        "ValueExpression": {
+          "Expression": "return shVer;",
+          "Interpreter": 1,
+          "JSExt": 1
+        },
+        "VariableName": "shVer"
+      }
+    ]
+  },
+  "Version": 2
+}

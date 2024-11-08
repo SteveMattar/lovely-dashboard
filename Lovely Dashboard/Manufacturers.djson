@@ -1,0 +1,202 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 40,
+  "BaseWidth": 54,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "db5a26d8-916a-4b37-a733-d4d94ba19fcd",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Height": 50,
+      "Length": 2257,
+      "MD5": "6ed3f58fad1cf980b4f36d59b230ed7b",
+      "Modified": false,
+      "Name": "ascher-logo",
+      "Optimized": true,
+      "Width": 86
+    },
+    {
+      "Extension": ".png",
+      "Height": 40,
+      "Length": 946,
+      "MD5": "78047f3a34725d6cbd5a4a8ec7cc5220",
+      "Modified": false,
+      "Name": "greywolf-logo",
+      "Optimized": true,
+      "Width": 41
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 40.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.4.9",
+    "Width": 54.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "// Return true for all Ascher Racing Artura USB Models\r\nreturn ( getcontrollername('0x35EE,*') ) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "AutoSizeScale": 0.6,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "// Return true for all Ascher Racing Artura USB Models\r\nreturn ( getcontrollername('0x35EE,*') ) ? true : false;",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Height": 30.0,
+              "Image": "ascher-logo",
+              "Left": 1.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Ascher Racing",
+              "RenderingSkip": 0,
+              "Top": 5.0,
+              "Visible": true,
+              "Width": 51.6
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#FF00FF00",
+              "Height": 8.0,
+              "Left": 46.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "EllipseItem",
+              "RenderingSkip": 0,
+              "Top": 5.0,
+              "Visible": true,
+              "Width": 8.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 1280.0,
+          "Name": "Ascher Racing",
+          "RenderingSkip": 128,
+          "Repetitions": 0,
+          "Visible": false
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "// Return true for all Greywolf devices\r\nreturn ( getcontrollername('0x9988,*') ) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Height": 40.0,
+              "Image": "greywolf-logo",
+              "Left": 6.5,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "ImageItem",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 41.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FFFFFFFF",
+              "EllipseThickness": 0.0,
+              "FillColor": "#FF00FF00",
+              "Height": 8.0,
+              "Left": 46.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "EllipseItem",
+              "RenderingSkip": 0,
+              "Top": 5.0,
+              "Visible": true,
+              "Width": 8.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 1280.0,
+          "Name": "Greywolf",
+          "RenderingSkip": 128,
+          "Repetitions": 0,
+          "Visible": false
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "39867c8a-4cfe-4a9f-bf57-67d15ddd7460"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": []
+  },
+  "Version": 2
+}

@@ -1,0 +1,135 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 680,
+  "BaseWidth": 680,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "39c8d34c-415d-4c5d-8f5f-af165f32036a",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 680.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 680.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderBottom": 2,
+            "BorderLeft": 2,
+            "BorderRight": 2,
+            "BorderTop": 2
+          },
+          "Height": 20.0,
+          "IsRectangleItem": true,
+          "Left": 339.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "RectangleItem",
+          "RenderingSkip": 0,
+          "Sid": 0,
+          "Top": 25.0,
+          "Visible": true,
+          "Width": 2.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "return $prop('variable.turnNumber')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 16.0,
+          "Height": 20.0,
+          "HorizontalAlignment": 1,
+          "IsTextItem": true,
+          "Left": 320.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "TextItem",
+          "RenderingSkip": 0,
+          "Sid": 0,
+          "Text": "00",
+          "TextColor": "#FFFFFFFF",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 40.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "387c74d0-20b7-45c0-841f-5dffffebf72a",
+      "Sid": 0
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "turnDistPerc"
+      },
+      {
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "turnNumber"
+      }
+    ]
+  },
+  "Version": 2
+}

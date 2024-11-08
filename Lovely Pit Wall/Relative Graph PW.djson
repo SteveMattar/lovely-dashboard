@@ -1,0 +1,565 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 67,
+  "BaseWidth": 1084,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "e44ba029-5a74-4b0c-a4d7-aed1b16d69f5",
+  "Images": [
+    {
+      "Extension": ".png",
+      "Length": 162,
+      "MD5": "10b36d8f9c7bba579e143cc46a7df21b",
+      "Modified": false,
+      "Name": "icon-left-red",
+      "Optimized": true
+    },
+    {
+      "Extension": ".png",
+      "Height": 20,
+      "Length": 166,
+      "MD5": "9483206ec29dd8a61d4a2ca842499b5a",
+      "Modified": false,
+      "Name": "icon-right-green",
+      "Optimized": true,
+      "Width": 20
+    }
+  ],
+  "IsOverlay": false,
+  "Metadata": {
+    "Author": "Constantinos Demetriadis - Lovely Sim Racing - http://j76.me/LSR",
+    "EnableOnDashboardMessaging": true,
+    "Height": 67.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.2.11",
+    "Title": "Turn Racing Dashboard",
+    "Width": 1084.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "let myPosInClass = driverclassposition( getplayerleaderboardposition() );\r\nlet oppInClass = myPosInClass - 1;\r\n\r\nreturn ( driveravailable( getopponentleaderboardposition_playerclassonly(oppInClass) ) ) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\:ss\\.fff",
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\treturn $prop('PersistantTrackerPlugin.DriverAhead_00_LastLapTime')\r\n} else {\r\n\treturn driverlastlap( getopponentleaderboardposition_aheadbehind_playerclassonly(-1) )\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 25.0,
+              "FontWeight": "Bold",
+              "Height": 67.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 939.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem4",
+              "RenderingSkip": 0,
+              "Text": "00:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 120.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0.00",
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\treturn ld_GetRelDriverName('Ahead_00')\r\n} else {\r\n\treturn ld_formatName (drivername( getopponentleaderboardposition_aheadbehind_playerclassonly(-1) ) )\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "FontWeight": "Bold",
+              "Height": 67.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 752.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem2",
+              "RenderingSkip": 0,
+              "Text": "F. Lastname",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 195.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0.00",
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\treturn ld_formatTimeShort($prop('PersistantTrackerPlugin.DriverAhead_00_Gap'))\r\n} else {\r\n\treturn ld_formatTimeShort(driverrelativegaptoplayer(getopponentleaderboardposition_aheadbehind_playerclassonly(-1)))\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "FontWeight": "Bold",
+              "Height": 67.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 649.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem6",
+              "RenderingSkip": 0,
+              "Text": "+0.00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 60.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverColor('Ahead_00')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\treturn $prop('PersistantTrackerPlugin.DriverAhead_00_Position')\r\n} else {\r\n\treturn getopponentleaderboardposition_aheadbehind_playerclassonly(-1)\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 26.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 716.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem8",
+              "RenderingSkip": 0,
+              "Text": "0",
+              "TextColor": "#FF000000",
+              "Top": 20.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 26.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 80.0,
+          "Name": "Ahead",
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 1.0,
+              "IsRectangleItem": true,
+              "Left": 447.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem2",
+              "RenderingSkip": 0,
+              "Top": 34.0,
+              "Visible": true,
+              "Width": 190.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 636.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem",
+              "RenderingSkip": 0,
+              "Top": 30.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 589.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem4",
+              "RenderingSkip": 0,
+              "Top": 30.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 541.5,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem5",
+              "RenderingSkip": 0,
+              "Top": 30.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 494.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem6",
+              "RenderingSkip": 0,
+              "Top": 30.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF727272",
+              "Height": 9.0,
+              "IsRectangleItem": true,
+              "Left": 447.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem3",
+              "RenderingSkip": 0,
+              "Top": 30.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageItem, SimHub.Plugins",
+              "AutoSize": true,
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Image": {
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\tdriverBehindDistance = $prop('PersistantTrackerPlugin.DriverBehind_00_Distance');\r\n\tdriverAheadDistance = $prop('PersistantTrackerPlugin.DriverAhead_00_Distance');\r\n} else {\r\n\tdriverBehindDistance = driverrelativedistancetoplayer(getopponentleaderboardposition_aheadbehind_playerclassonly(1));\r\n\tdriverAheadDistance = driverrelativedistancetoplayer(getopponentleaderboardposition_aheadbehind_playerclassonly(-1));\r\n}\r\n\r\nbehindDistance = Math.round( (driverBehindDistance / (driverBehindDistance + Math.abs(driverAheadDistance))) * 100 )\r\n\r\nif ( ld_isIncreasing(behindDistance) == true ) {\r\n\treturn 'icon-right-green'\r\n} else if ( ld_isIncreasing( behindDistance) == false ) {\t\r\n\treturn 'icon-left-red'\r\n} else { \r\n\treturn 'icon-right-green'\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1,
+                    "PreExpression": "var driverBehindDistance = 0;\r\nvar driverAheadDistance = 0;\r\nvar behindDistance = 0;"
+                  },
+                  "Mode": 2
+                },
+                "Left": {
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\ttotalDistance = $prop('PersistantTrackerPlugin.DriverBehind_00_Distance') + Math.abs($prop('PersistantTrackerPlugin.DriverAhead_00_Distance'))\r\n\tpercentPosition = ($prop('PersistantTrackerPlugin.DriverBehind_00_Distance') / totalDistance) * 100\r\n} else {\r\n\ttotalDistance = Math.abs(driverrelativedistancetoplayer(getopponentleaderboardposition_aheadbehind_playerclassonly(1))) + Math.abs(driverrelativedistancetoplayer(getopponentleaderboardposition_aheadbehind_playerclassonly(-1)))\r\n\tpercentPosition = (Math.abs(driverrelativedistancetoplayer(getopponentleaderboardposition_aheadbehind_playerclassonly(1))) / totalDistance) * 100\r\n}\r\n\r\nreturn Math.round( (180 * (percentPosition / 100)) + 444 )\r\n\r\n// 444 - 620\r\n//percentPosition",
+                    "Interpreter": 1,
+                    "JSExt": 1,
+                    "PreExpression": "var totalDistance = 0;\r\nvar percentPosition = 0;"
+                  },
+                  "Mode": 2
+                }
+              },
+              "Height": 20.0,
+              "Image": "icon-right-green",
+              "Left": 620.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "ImageItem",
+              "RenderingSkip": 0,
+              "Top": 24.0,
+              "Visible": true,
+              "Width": 20.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 80.0,
+          "Name": "Graph",
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "let myPosInClass = driverclassposition( getplayerleaderboardposition() );\r\nlet oppInClass = myPosInClass + 1;\r\n\r\nreturn ( driveravailable( getopponentleaderboardposition_playerclassonly(oppInClass) ) ) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\treturn ld_formatTimeShort($prop('PersistantTrackerPlugin.DriverBehind_00_Gap'))\r\n} else {\r\n\treturn ld_formatTimeShort(driverrelativegaptoplayer(getopponentleaderboardposition_aheadbehind_playerclassonly(1)))\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "FontWeight": "Bold",
+              "Height": 67.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 376.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem",
+              "RenderingSkip": 0,
+              "Text": "-0.00",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 60.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0.00",
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\treturn ld_GetRelDriverName('Behind_00')\r\n} else {\r\n\treturn ld_formatName( drivername( getopponentleaderboardposition_aheadbehind_playerclassonly(1) ) )\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 22.0,
+              "FontWeight": "Bold",
+              "Height": 67.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 135.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem3",
+              "RenderingSkip": 0,
+              "Text": "F. Lastname",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 195.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\:ss\\.fff",
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\treturn $prop('PersistantTrackerPlugin.DriverBehind_00_LastLapTime')\r\n} else {\r\n\treturn driverlastlap( getopponentleaderboardposition_aheadbehind_playerclassonly(1) )\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 25.0,
+              "FontWeight": "Bold",
+              "Height": 67.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 25.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem5",
+              "RenderingSkip": 0,
+              "Text": "00:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 120.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_GetRelDriverColor('Behind_00')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'overall' ) {\r\n\treturn $prop('PersistantTrackerPlugin.DriverBehind_00_Position')\r\n} else {\r\n\treturn getopponentleaderboardposition_aheadbehind_playerclassonly(1)\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 26.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 340.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "TextItem7",
+              "RenderingSkip": 0,
+              "Text": "0",
+              "TextColor": "#FF000000",
+              "Top": 20.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 26.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 80.0,
+          "Name": "Behind",
+          "RenderingSkip": 8,
+          "Repetitions": 0,
+          "Visible": true
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Relative",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": "",
+        "Interpreter": 1,
+        "JSExt": 1
+      },
+      "ScreenId": "64d37f21-e978-412f-a018-8d552182d72f"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": true,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "graphMode"
+      }
+    ]
+  },
+  "Version": 2
+}

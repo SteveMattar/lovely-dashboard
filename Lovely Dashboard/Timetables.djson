@@ -1,0 +1,2871 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 333,
+  "BaseWidth": 630,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "152e57f7-434c-4930-a68e-04ac96d12f3f",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 333.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0,
+      1
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 2.0,
+    "SimHubVersion": "9.5.1",
+    "Width": 630.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Repetitions": {
+              "Formula": {
+                "Expression": "return ( \r\n\t$prop('variable.dashName') == \"LovelyDashboardUXL\" ||\r\n\t$prop('variable.dashName') == \"LovelyDashboardCurved\"\r\n) ? 5 : 6;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableBg')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 24.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem0",
+              "RenderingSkip": 0,
+              "Top": 19.0,
+              "Visible": true,
+              "Width": 630.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Relative BG",
+          "PrepareRepetitions": true,
+          "RenderingSkip": 32,
+          "RepeatTopOffset": 58.0,
+          "Repetitions": 5,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "if ( \r\n\t$prop('variable.dashName') == 'LovelyDashboardUXL' ||\r\n\t$prop('variable.dashName') == 'LovelyDashboardCurved'\r\n) {\r\n\treturn -10;\r\n} else {\r\n\treturn 19;\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "ChildAlignmentHorizontal": 0,
+          "ChildAlignmentVertical": 0,
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "Bindings": {
+                "Repetitions": {
+                  "Formula": {
+                    "Expression": "if ( \r\n\t$prop('variable.dashName') == \"LovelyDashboardUXL\"\r\n) {\r\n\treturn ( getbestlapopponentleaderboardposition() > 0 ) ? 3 : 4;\r\n} else {\r\n\treturn ( getbestlapopponentleaderboardposition() > 0 ) ? 4 : 5;\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return getopponentleaderboardposition_aheadbehind(repeatOffset) != -1;",
+                        "Interpreter": 1,
+                        "JSExt": 1,
+                        "PreExpression": "let repeatOffset = repeatindex()"
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "m\\.ss\\.fff",
+                          "Formula": {
+                            "Expression": "return ld_getLastLapTimeFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getLastLapColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 20.0,
+                      "FontWeight": "Medium",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 2,
+                      "IsTextItem": true,
+                      "Left": 545.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Last",
+                      "RenderingSkip": 0,
+                      "Text": "0:00.000",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 174.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 82.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "m\\.ss\\.fff",
+                          "Formula": {
+                            "Expression": "return ld_getBestLapTimeFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getBestLapColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 20.0,
+                      "FontWeight": "Medium",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 2,
+                      "IsTextItem": true,
+                      "Left": 445.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Best",
+                      "RenderingSkip": 0,
+                      "Text": "0:00.000",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 174.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 82.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "0",
+                          "Formula": {
+                            "Expression": "return ld_getRelativeGapFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getDriverColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 20.0,
+                      "FontWeight": "Medium",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 2,
+                      "IsTextItem": true,
+                      "Left": 372.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Gap",
+                      "RenderingSkip": 0,
+                      "Text": "+0.00",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 174.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 50.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Left": {
+                          "Formula": {
+                            "Expression": "let leftMargin = 35;\r\n\r\n// DriverNumebr\r\nleftMargin = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind() ) ? leftMargin + 50 : leftMargin;\r\n\r\n// CarLogo\r\nleftMargin = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind() ) ? leftMargin + 30 : leftMargin; \r\n\r\nreturn leftMargin;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Text": {
+                          "Formula": {
+                            "Expression": "return ld_getNameFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getDriverColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Width": {
+                          "Formula": {
+                            "Expression": "let width = 320;\r\n\r\n// DriverNumebr\r\nwidth = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind() ) ? width - 50 : width;\r\n\r\n// CarLogo\r\nwidth = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind() ) ? width - 30 : width; \r\n\r\nreturn width;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 20.0,
+                      "FontWeight": "Medium",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 115.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Name",
+                      "RenderingSkip": 0,
+                      "Text": "A Driver",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 174.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 250.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageFromUrlItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "ImageUrl": {
+                          "Formula": {
+                            "Expression": "return ld_getDriverLogoFromAheadBehind( repeatOffset )",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Left": {
+                          "Formula": {
+                            "Expression": "return ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind( repeatOffset ) ) ? 85 : 35;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind( repeatOffset ) ) ? true : false;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Height": 20.0,
+                      "ImageRefreshIntervalSeconds": 60,
+                      "ImageUrl": "https://api.lsr.gg/assets/car-logos/logo-ferrari-opponent-0.png",
+                      "Left": 85.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "ImageFromUrlItem",
+                      "RenderingSkip": 0,
+                      "Top": 176.0,
+                      "Visible": true,
+                      "Width": 20.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "Formula": {
+                            "Expression": "return ld_getCarNumberFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getDriverColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind( repeatOffset ) ) ? true : false;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 18.0,
+                      "FontWeight": "Bold",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 2,
+                      "IsTextItem": true,
+                      "Left": 35.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Number",
+                      "RenderingSkip": 0,
+                      "Text": "#000",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 174.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 40.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#FFFFFFFF",
+                      "Bindings": {
+                        "BackgroundColor": {
+                          "Formula": {
+                            "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(repeatOffset) )",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Text": {
+                          "Formula": {
+                            "Expression": "return ld_getPositionFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(repeatOffset) )",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 5,
+                        "RadiusBottomRight": 5,
+                        "RadiusTopLeft": 5,
+                        "RadiusTopRight": 5
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 17.0,
+                      "FontWeight": "Black",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 1,
+                      "IsTextItem": true,
+                      "Left": 0.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Position",
+                      "RenderingSkip": 0,
+                      "Text": "00",
+                      "TextColor": "#FF000000",
+                      "Top": 174.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 24.0
+                    }
+                  ],
+                  "Group": true,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Row",
+                  "RenderingSkip": 0,
+                  "Repetitions": 0,
+                  "Visible": true
+                }
+              ],
+              "Group": true,
+              "MinimumRefreshIntervalMS": 320.0,
+              "Name": "Behind",
+              "PrepareRepetitions": true,
+              "RenderingSkip": 32,
+              "RepeatTopOffset": 29.0,
+              "Repetitions": 3,
+              "Visible": true
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "m\\.ss\\.fff",
+                      "Formula": {
+                        "Expression": "return ld_getLastLapTimeFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getLastLapColorFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Bold",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 545.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Last",
+                  "RenderingSkip": 0,
+                  "Text": "0:00.000",
+                  "TextColor": "#FFFFE04C",
+                  "Top": 145.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 82.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "m\\.ss\\.fff",
+                      "Formula": {
+                        "Expression": "return ld_getBestLapTimeFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getBestLapColorFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Bold",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 445.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Best",
+                  "RenderingSkip": 0,
+                  "Text": "0:00.000",
+                  "TextColor": "#FFFFE04C",
+                  "Top": 145.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 82.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_theme('ld_tableDriver')",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Medium",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 372.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Gap",
+                  "RenderingSkip": 0,
+                  "Text": "0.0",
+                  "TextColor": "#FFFFE04C",
+                  "Top": 145.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 50.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Left": {
+                      "Formula": {
+                        "Expression": "let leftMargin = 35;\r\n\r\n// DriverNumebr\r\nleftMargin = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind() ) ? leftMargin + 50 : leftMargin;\r\n\r\n// CarLogo\r\nleftMargin = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind() ) ? leftMargin + 30 : leftMargin; \r\n\r\nreturn leftMargin;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Text": {
+                      "FormatString": "",
+                      "Formula": {
+                        "Expression": "return ld_getNameFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getDriverColorFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Width": {
+                      "Formula": {
+                        "Expression": "let width = 320;\r\n\r\n// DriverNumebr\r\nwidth = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind() ) ? width - 50 : width;\r\n\r\n// CarLogo\r\nwidth = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind() ) ? width - 30 : width; \r\n\r\nreturn width;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Medium",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 115.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Name",
+                  "RenderingSkip": 0,
+                  "Text": "A Driver",
+                  "TextColor": "#FFFFE04C",
+                  "Top": 145.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 250.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageFromUrlItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "ImageUrl": {
+                      "Formula": {
+                        "Expression": "return ld_getDriverLogoFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Left": {
+                      "Formula": {
+                        "Expression": "return ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind() ) ? 85 : 35;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind() ) ? true : false;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Height": 20.0,
+                  "ImageRefreshIntervalSeconds": 60,
+                  "ImageUrl": "https://api.lsr.gg/assets/car-logos/logo-ferrari-driver-0.png",
+                  "Left": 85.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "ImageFromUrlItem",
+                  "RenderingSkip": 0,
+                  "Top": 147.0,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return ld_getCarNumberFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getDriverColorFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind() ) ? true : false;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 35.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Number",
+                  "RenderingSkip": 0,
+                  "Text": "#000",
+                  "TextColor": "#FFFFE04C",
+                  "Top": 145.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFFE04C",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasscolor( getplayerleaderboardposition() )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return ld_getPositionFromAheadBehind()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasstextcolor( getplayerleaderboardposition() )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 5,
+                    "RadiusBottomRight": 5,
+                    "RadiusTopLeft": 5,
+                    "RadiusTopRight": 5
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 17.0,
+                  "FontWeight": "Black",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Position",
+                  "RenderingSkip": 0,
+                  "Text": "00",
+                  "TextColor": "#FF000000",
+                  "Top": 145.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 24.0
+                }
+              ],
+              "Group": true,
+              "IsFreezed": true,
+              "MinimumRefreshIntervalMS": 320.0,
+              "Name": "Driver",
+              "RenderingSkip": 32,
+              "RepeatTopOffset": 0.0,
+              "Repetitions": 0,
+              "Visible": true
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "Bindings": {
+                "Repetitions": {
+                  "Formula": {
+                    "Expression": "return ( \r\n\t$prop('variable.dashName') == \"LovelyDashboardUXL\" ||\r\n\t$prop('variable.dashName') == \"LovelyDashboardCurved\"\r\n) ? 4 : 5;",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "Bindings": {
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return getopponentleaderboardposition_aheadbehind(repeatOffset) != -1;",
+                        "Interpreter": 1,
+                        "JSExt": 1,
+                        "PreExpression": "let repeatOffset = -repeatindex()"
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "m\\.ss\\.fff",
+                          "Formula": {
+                            "Expression": "return ld_getLastLapTimeFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getLastLapColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 20.0,
+                      "FontWeight": "Medium",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 2,
+                      "IsTextItem": true,
+                      "Left": 545.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Last",
+                      "RenderingSkip": 0,
+                      "Text": "0:00.000",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 116.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 82.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "m\\.ss\\.fff",
+                          "Formula": {
+                            "Expression": "return ld_getBestLapTimeFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getBestLapColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 20.0,
+                      "FontWeight": "Medium",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 2,
+                      "IsTextItem": true,
+                      "Left": 445.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Best",
+                      "RenderingSkip": 0,
+                      "Text": "0:00.000",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 116.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 82.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "FormatString": "0",
+                          "Formula": {
+                            "Expression": "return ld_getRelativeGapFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getDriverColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 20.0,
+                      "FontWeight": "Medium",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 2,
+                      "IsTextItem": true,
+                      "Left": 372.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Gap",
+                      "RenderingSkip": 0,
+                      "Text": "-0.00",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 116.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 50.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Left": {
+                          "Formula": {
+                            "Expression": "let leftMargin = 35;\r\n\r\n// DriverNumebr\r\nleftMargin = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind() ) ? leftMargin + 50 : leftMargin;\r\n\r\n// CarLogo\r\nleftMargin = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind() ) ? leftMargin + 30 : leftMargin; \r\n\r\nreturn leftMargin;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Text": {
+                          "Formula": {
+                            "Expression": "return ld_getNameFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getDriverColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Width": {
+                          "Formula": {
+                            "Expression": "let width = 320;\r\n\r\n// DriverNumebr\r\nwidth = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind() ) ? width - 50 : width;\r\n\r\n// CarLogo\r\nwidth = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind() ) ? width - 30 : width; \r\n\r\nreturn width;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 20.0,
+                      "FontWeight": "Medium",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 115.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Name",
+                      "RenderingSkip": 0,
+                      "Text": "A Driver",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 116.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 250.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageFromUrlItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "ImageUrl": {
+                          "Formula": {
+                            "Expression": "return ld_getDriverLogoFromAheadBehind( repeatOffset )",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Left": {
+                          "Formula": {
+                            "Expression": "return ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind( repeatOffset ) ) ? 85 : 35;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromAheadBehind( repeatOffset ) ) ? true : false;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Height": 20.0,
+                      "ImageRefreshIntervalSeconds": 60,
+                      "ImageUrl": "https://api.lsr.gg/assets/car-logos/logo-ferrari-opponent-0.png",
+                      "Left": 85.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "ImageFromUrlItem",
+                      "RenderingSkip": 0,
+                      "Top": 118.0,
+                      "Visible": true,
+                      "Width": 20.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "Formula": {
+                            "Expression": "return ld_getCarNumberFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return ld_getDriverColorFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Visible": {
+                          "Formula": {
+                            "Expression": "return ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromAheadBehind( repeatOffset) ) ? true : false;",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 18.0,
+                      "FontWeight": "Bold",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 2,
+                      "IsTextItem": true,
+                      "Left": 35.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Number",
+                      "RenderingSkip": 0,
+                      "Text": "#000",
+                      "TextColor": "#FFFFFFFF",
+                      "Top": 116.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 40.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#FFFFFFFF",
+                      "Bindings": {
+                        "BackgroundColor": {
+                          "Formula": {
+                            "Expression": "return drivercarclasscolor( getopponentleaderboardposition_aheadbehind(repeatOffset) )",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "Text": {
+                          "Formula": {
+                            "Expression": "return ld_getPositionFromAheadBehind(repeatOffset)",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return drivercarclasstextcolor( getopponentleaderboardposition_aheadbehind(repeatOffset) )",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "let repeatOffset = -repeatindex()"
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "BorderStyle": {
+                        "RadiusBottomLeft": 5,
+                        "RadiusBottomRight": 5,
+                        "RadiusTopLeft": 5,
+                        "RadiusTopRight": 5
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 17.0,
+                      "FontWeight": "Black",
+                      "Height": 24.0,
+                      "HorizontalAlignment": 1,
+                      "IsTextItem": true,
+                      "Left": 0.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Position",
+                      "RenderingSkip": 0,
+                      "Text": "00",
+                      "TextColor": "#FF000000",
+                      "Top": 116.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 24.0
+                    }
+                  ],
+                  "Group": true,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Row",
+                  "RenderingSkip": 0,
+                  "Repetitions": 0,
+                  "Visible": true
+                }
+              ],
+              "Group": true,
+              "IsFreezed": true,
+              "MinimumRefreshIntervalMS": 320.0,
+              "Name": "Ahead",
+              "PrepareRepetitions": true,
+              "RenderingSkip": 32,
+              "RepeatTopOffset": -29.0,
+              "Repetitions": 4,
+              "Visible": true
+            }
+          ],
+          "ChildsMargin": {},
+          "ChildsPositioning": 0,
+          "ChildsPositioningAlignment": 0,
+          "GroupPadding": {},
+          "Height": 315.0,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Relative",
+          "RenderingSkip": 0,
+          "Top": 19.0,
+          "Visible": true,
+          "Width": 630.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 565.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Last",
+          "RenderingSkip": 32,
+          "Text": "LAST",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 60.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 465.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Best",
+          "RenderingSkip": 32,
+          "Text": "BEST",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 60.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 360.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Gap",
+          "RenderingSkip": 32,
+          "Text": "GAP",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 60.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 0,
+          "IsTextItem": true,
+          "Left": 30.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Title",
+          "RenderingSkip": 32,
+          "Text": "RELATIVE",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 60.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "if ( $prop('LovelyPlugin.ld_NextRaceDate') && $prop('variable.dashName') == \"LovelyDashboardCompanion\" ) {\r\n\treturn 280;\r\n} else if ( $prop('variable.dashName') == \"LovelyDashboardUXL\" ) {\r\n\treturn 251;\r\n} else if ( $prop('variable.dashName') == \"LovelyDashboardCurved\" ) {\r\n\treturn 280;\r\n} else {\r\n\treturn 309;\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( getbestlapopponentleaderboardposition() > 0 ) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "ChildAlignmentHorizontal": 0,
+          "ChildAlignmentVertical": 0,
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FFC500CE",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastest')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 24.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem0",
+              "RenderingSkip": 0,
+              "Top": -0.40000000000000036,
+              "Visible": true,
+              "Width": 630.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "return driverbestlap( getbestlapopponentleaderboardposition_playerclassonly() )",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastestText');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 326.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Lap Time",
+              "RenderingSkip": 0,
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": -0.40000000000000036,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "var driverName = $prop('LovelyPlugin.ld_DriverName')\r\nvar name = drivername( getbestlapopponentleaderboardposition_playerclassonly() );\r\n\r\nreturn ld_formatName(name, driverName)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastestText');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 180.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Name",
+              "RenderingSkip": 0,
+              "Text": "A Driver",
+              "TextColor": "#FFFFFFFF",
+              "Top": -0.40000000000000036,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastestText')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "return 'P'+ld_getLeaderboardPositionFromAbsolutePosition(1)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastest')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "CharWidth": 10.0,
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Black",
+              "Height": 20.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 130.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Position",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 10.0,
+              "Text": "P00",
+              "TextColor": "#FFC500CE",
+              "Top": 2.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return ( getleaderboardcarclasscount() > 1 ) ? 'Fastest in Class' : 'Fastest Lap';",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastestText')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 14.0,
+              "FontWeight": "Medium",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 5.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Label",
+              "RenderingSkip": 0,
+              "Text": "Fastest in Class",
+              "TextColor": "#FFFFFFFF",
+              "Top": -0.40000000000000036,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 115.0
+            }
+          ],
+          "ChildsMargin": {},
+          "ChildsPositioning": 0,
+          "ChildsPositioningAlignment": 0,
+          "GroupPadding": {},
+          "Height": 24.0,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Fastest Lap",
+          "RenderingSkip": 32,
+          "Top": 309.0,
+          "Visible": true,
+          "Width": 630.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Relative",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "3606ed9d-0638-4225-a261-3863f7802dff"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Repetitions": {
+              "Formula": {
+                "Expression": "return (\r\n\t$prop('variable.dashName') == \"LovelyDashboardUXL\" || \r\n\t$prop('variable.dashName') == \"LovelyDashboardCurved\"\r\n) ? 5 : 6;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_tableBg')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 24.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem0",
+              "RenderingSkip": 0,
+              "Top": 19.0,
+              "Visible": true,
+              "Width": 830.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Relative BG",
+          "PrepareRepetitions": true,
+          "RenderingSkip": 32,
+          "RepeatTopOffset": 58.0,
+          "Repetitions": 5,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Repetitions": {
+              "Formula": {
+                "Expression": "if ( $prop('variable.dashName') == \"LovelyDashboardUXL\" ) {\r\n\treturn ( getbestlapopponentleaderboardposition() > 0 ) ? 7 : 8;\r\n} else if ( $prop('variable.dashName') == \"LovelyDashboardCurved\" ) {\r\n\treturn ( getbestlapopponentleaderboardposition() > 0 ) ? 8 : 9;\r\n} else{\r\n\treturn ( getbestlapopponentleaderboardposition() > 0 ) ? 9 : 10;\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+              "Bindings": {
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return driveravailable( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) ? true : false;",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "m\\.ss\\.fff",
+                      "Formula": {
+                        "Expression": "return ld_getLastLapTimeFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex()+ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getLastLapColorFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex()+ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Medium",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 545.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Last",
+                  "RenderingSkip": 0,
+                  "Text": "0:00.000",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 48.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 82.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "m\\.ss\\.fff",
+                      "Formula": {
+                        "Expression": "return ld_getBestLapTimeFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex()+ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getBestLapColorFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex()+ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Medium",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 445.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Best",
+                  "RenderingSkip": 0,
+                  "Text": "0:00.000",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 48.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 82.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "",
+                      "Formula": {
+                        "Expression": "return ld_formatTimeVeryShort( drivergaptoleader( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) - drivergaptoleader( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) - 1 ) ) );",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getDriverColorFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return !ld_isQuali()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "CharWidth": 11.0,
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Medium",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 355.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Int (Race)",
+                  "RenderingSkip": 0,
+                  "SpecialCharsWidth": 4.0,
+                  "Text": "0.000",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 48.0,
+                  "UseMonospacedText": true,
+                  "VerticalAlignment": 1,
+                  "Visible": false,
+                  "Width": 65.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "",
+                      "Formula": {
+                        "Expression": "let timeDiff = timespantoseconds( driverbestlap( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) ) - timespantoseconds( driverbestlap( ld_getLeaderboardPositionFromAbsolutePosition( 1 )) );\r\n\r\nif ( timeDiff > 0 ) {\r\n\treturn ld_formatTime( timeDiff );\r\n} else {\r\n\treturn '';\r\n}",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getDriverColorFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return ld_isQuali()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "CharWidth": 11.0,
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Medium",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 345.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Delta (Quali)",
+                  "RenderingSkip": 0,
+                  "SpecialCharsWidth": 4.0,
+                  "Text": "0.000",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 48.0,
+                  "UseMonospacedText": true,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 75.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Left": {
+                      "Formula": {
+                        "Expression": "let leftMargin = 35;\r\n\r\n// DriverNumebr\r\nleftMargin = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) ) ? leftMargin + 50 : leftMargin;\r\n\r\n// CarLogo\r\nleftMargin = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) ) ? leftMargin + 30 : leftMargin; \r\n\r\nreturn leftMargin;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return ld_getNameFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex()+ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getDriverColorFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex()+ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Width": {
+                      "Formula": {
+                        "Expression": "let width = 320;\r\n\r\n// DriverNumebr\r\nwidth = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) ) ? width - 50 : width;\r\n\r\n// CarLogo\r\nwidth = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getCarNumberFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) ) ? width - 30 : width; \r\n\r\nreturn width;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "CharWidth": 11.0,
+                  "Font": "Roboto",
+                  "FontSize": 20.0,
+                  "FontWeight": "Medium",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 0,
+                  "IsTextItem": true,
+                  "Left": 115.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Name",
+                  "RenderingSkip": 0,
+                  "SpecialCharsWidth": 4.0,
+                  "Text": "F. Lastname",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 48.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 225.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageFromUrlItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "ImageUrl": {
+                      "Formula": {
+                        "Expression": "return ld_getDriverLogoFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Left": {
+                      "Formula": {
+                        "Expression": "return ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) ) ? 85 : 35;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) ) ? true : false;",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Height": 20.0,
+                  "ImageRefreshIntervalSeconds": 60,
+                  "ImageUrl": "https://api.lsr.gg/assets/car-logos/logo-ferrari-opponent-0.png",
+                  "Left": 85.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "ImageFromUrlItem",
+                  "RenderingSkip": 0,
+                  "Top": 50.0,
+                  "Visible": true,
+                  "Width": 20.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Text": {
+                      "FormatString": "",
+                      "Formula": {
+                        "Expression": "return '#' + drivercarnumber( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) );",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return ld_getDriverColorFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex()+ld_boardScroll(10,1) ) );",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "return $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) ) != null",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "CharWidth": 10.0,
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 2,
+                  "IsTextItem": true,
+                  "Left": 35.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Number",
+                  "RenderingSkip": 0,
+                  "SpecialCharsWidth": 10.0,
+                  "Text": "#00",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 48.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#FFFFFFFF",
+                  "Bindings": {
+                    "BackgroundColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasscolor( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) );",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return repeatindex() + ld_boardScroll(10,1);",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasstextcolor( ld_getLeaderboardPositionFromAbsolutePosition( repeatindex() + ld_boardScroll(10,1) ) );",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "BorderStyle": {
+                    "RadiusBottomLeft": 5,
+                    "RadiusBottomRight": 5,
+                    "RadiusTopLeft": 5,
+                    "RadiusTopRight": 5
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 17.0,
+                  "FontWeight": "Black",
+                  "Height": 24.0,
+                  "HorizontalAlignment": 1,
+                  "IsFreezed": true,
+                  "IsTextItem": true,
+                  "Left": 0.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Position",
+                  "RenderingSkip": 0,
+                  "Text": "00",
+                  "TextColor": "#FF000000",
+                  "Top": 48.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 24.0
+                }
+              ],
+              "Group": true,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Row",
+              "RenderingSkip": 0,
+              "Repetitions": 0,
+              "Visible": true
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "P2-P11",
+          "PrepareRepetitions": true,
+          "RenderingSkip": 32,
+          "RepeatTopOffset": 29.0,
+          "Repetitions": 9,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "BackgroundColor": "#FFFFFFFF",
+          "Bindings": {
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLine')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( ld_boardScroll(8,1) > 1 )",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 1,
+            "RadiusBottomRight": 1,
+            "RadiusTopLeft": 1,
+            "RadiusTopRight": 1
+          },
+          "Height": 1.0,
+          "IsRectangleItem": true,
+          "Left": 27.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Separator",
+          "RenderingSkip": 0,
+          "Top": 45.0,
+          "Visible": true,
+          "Width": 605.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "return ld_getLastLapTimeFromLeaderboardPosition(1)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_getLastLapColorFromLeaderboardPosition(1)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Medium",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 545.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Last",
+              "RenderingSkip": 0,
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 19.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "return ld_getBestLapTimeFromLeaderboardPosition(1)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_getBestLapColorFromLeaderboardPosition(1)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Medium",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 445.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Best",
+              "RenderingSkip": 0,
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 19.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "return \"L\" + drivercurrentlap( ld_getLeaderboardPositionFromAbsolutePosition(1) );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_getDriverColorFromLeaderboardPosition( 1 )",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return !ld_isQuali()",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "CharWidth": 11.0,
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Medium",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 355.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Int (Race)",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 4.0,
+              "Text": "L0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 19.0,
+              "UseMonospacedText": true,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\:ss\\.fff",
+                  "Formula": {
+                    "Expression": "let bestLap = driverbestlap( ld_getLeaderboardPositionFromAbsolutePosition(1) );\r\n\r\nif ( timespantoseconds( bestLap ) > 0 ) {\r\n\treturn bestLap;\r\n} else {\r\n\treturn '';\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastest')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return ld_isQuali()",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "CharWidth": 11.0,
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Medium",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 345.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Delta (Quali)",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 4.0,
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 19.0,
+              "UseMonospacedText": true,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 75.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Left": {
+                  "Formula": {
+                    "Expression": "let leftMargin = 35;\r\n\r\n// DriverNumebr\r\nleftMargin = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromLeaderboardPosition(1) ) ? leftMargin + 50 : leftMargin;\r\n\r\n// CarLogo\r\nleftMargin = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromLeaderboardPosition(1) ) ? leftMargin + 30 : leftMargin; \r\n\r\nreturn leftMargin;",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "return ld_getNameFromLeaderboardPosition( ld_getLeaderboardPositionFromAbsolutePosition(1) );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_getDriverColorFromLeaderboardPosition( 1 )",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Width": {
+                  "Formula": {
+                    "Expression": "let width = 320;\r\n\r\n// DriverNumebr\r\nwidth = ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromLeaderboardPosition( 1 ) ) ? width - 50 : width;\r\n\r\n// CarLogo\r\nwidth = ( $prop('LovelyPlugin.ld_CarLogo') && ld_getCarNumberFromLeaderboardPosition( 1 ) ) ? width - 30 : width; \r\n\r\nreturn width;",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Medium",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 115.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Name",
+              "RenderingSkip": 0,
+              "Text": "F. Lastname",
+              "TextColor": "#FFFFFFFF",
+              "Top": 19.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 225.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.ImageFromUrlItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "ImageUrl": {
+                  "Formula": {
+                    "Expression": "return ld_getDriverLogoFromLeaderboardPosition(1)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Left": {
+                  "Formula": {
+                    "Expression": "return ( $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromLeaderboardPosition(1) ) ? 85 : 35;",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return ( $prop('LovelyPlugin.ld_CarLogo') && ld_getDriverLogoFromLeaderboardPosition(1) ) ? true : false;",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Height": 20.0,
+              "ImageRefreshIntervalSeconds": 60,
+              "ImageUrl": "https://api.lsr.gg/assets/car-logos/logo-ferrari-opponent-0.png",
+              "Left": 85.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "ImageFromUrlItem",
+              "RenderingSkip": 0,
+              "Top": 21.0,
+              "Visible": true,
+              "Width": 20.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "",
+                  "Formula": {
+                    "Expression": "return '#' + drivercarnumber( ld_getLeaderboardPositionFromAbsolutePosition( 1 ) );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_getDriverColorFromLeaderboardPosition( 1 )",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "return $prop('LovelyPlugin.ld_DriverNumber') && ld_getCarNumberFromLeaderboardPosition(1) != null",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "CharWidth": 10.0,
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 35.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Number",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 10.0,
+              "Text": "#000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 19.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasscolor( ld_getLeaderboardPositionFromAbsolutePosition(1) );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "return 1;",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return drivercarclasstextcolor( ld_getLeaderboardPositionFromAbsolutePosition(1) );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 17.0,
+              "FontWeight": "Black",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsFreezed": true,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Position",
+              "RenderingSkip": 0,
+              "Text": "00",
+              "TextColor": "#FF000000",
+              "Top": 19.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 24.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "P1",
+          "RenderingSkip": 32,
+          "RepeatTopOffset": 27.0,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 565.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Last",
+          "RenderingSkip": 32,
+          "Text": "LAST",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 60.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 465.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Best",
+          "RenderingSkip": 32,
+          "Text": "BEST",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 60.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 2,
+          "IsTextItem": true,
+          "Left": 360.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Gap",
+          "RenderingSkip": 32,
+          "Text": "GAP",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 60.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "TextColor": {
+              "Formula": {
+                "Expression": "return ld_theme('ld_uiLabel')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Font": "Roboto",
+          "FontSize": 12.0,
+          "FontWeight": "Bold",
+          "Height": 14.0,
+          "HorizontalAlignment": 0,
+          "IsTextItem": true,
+          "Left": 30.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Title",
+          "RenderingSkip": 32,
+          "Text": "STANDINGS",
+          "TextColor": "#FF878787",
+          "Top": 0.0,
+          "VerticalAlignment": 1,
+          "Visible": true,
+          "Width": 70.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Top": {
+              "Formula": {
+                "Expression": "if (  $prop('LovelyPlugin.ld_NextRaceDate') && $prop('variable.dashName') == \"LovelyDashboardCompanion\" ) {\r\n\treturn 280;\r\n} else if ( $prop('variable.dashName') == \"LovelyDashboardUXL\" ) {\r\n\treturn 251;\r\n} else if ( $prop('variable.dashName') == \"LovelyDashboardCurved\" ) {\r\n\treturn 280;\r\n} else {\r\n\treturn 309;\r\n}",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            },
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( getbestlapopponentleaderboardposition() > 0 ) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "ChildAlignmentHorizontal": 0,
+          "ChildAlignmentVertical": 0,
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FFC500CE",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastest')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Height": 24.0,
+              "IsRectangleItem": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "RectangleItem0",
+              "RenderingSkip": 0,
+              "Top": -0.40000000000000036,
+              "Visible": true,
+              "Width": 630.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\.ss\\.fff",
+                  "Formula": {
+                    "Expression": "return driverbestlap( getbestlapopponentleaderboardposition_playerclassonly() )",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastestText');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 326.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Lap Time",
+              "RenderingSkip": 0,
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": -0.40000000000000036,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 82.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "var driverName = $prop('LovelyPlugin.ld_DriverName')\r\nvar name = drivername( getbestlapopponentleaderboardposition_playerclassonly() );\r\n\r\nreturn ld_formatName(name, driverName)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastestText');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 180.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Name",
+              "RenderingSkip": 0,
+              "Text": "A Driver",
+              "TextColor": "#FFFFFFFF",
+              "Top": -0.40000000000000036,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 160.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastestText')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "return 'P'+ld_getLeaderboardPositionFromAbsolutePosition(1)",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastest')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "CharWidth": 10.0,
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Black",
+              "Height": 20.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 130.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Position",
+              "RenderingSkip": 0,
+              "SpecialCharsWidth": 10.0,
+              "Text": "P00",
+              "TextColor": "#FFC500CE",
+              "Top": 2.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return ( getleaderboardcarclasscount() > 1 ) ? 'Fastest in Class' : 'Fastest Lap';",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiFastestText')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 14.0,
+              "FontWeight": "Medium",
+              "Height": 24.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 5.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Label",
+              "RenderingSkip": 0,
+              "Text": "Fastest in Class",
+              "TextColor": "#FFFFFFFF",
+              "Top": -0.40000000000000036,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 115.0
+            }
+          ],
+          "ChildsMargin": {},
+          "ChildsPositioning": 0,
+          "ChildsPositioningAlignment": 0,
+          "GroupPadding": {},
+          "Height": 24.0,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Fastest Lap",
+          "RenderingSkip": 32,
+          "Top": 309.0,
+          "Visible": true,
+          "Width": 630.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Standings",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "6c115c1d-f55a-41f0-aad5-a2ef7bb20a8f"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "trueDarkMode"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      }
+    ]
+  },
+  "Version": 2
+}

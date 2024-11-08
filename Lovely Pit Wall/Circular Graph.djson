@@ -1,0 +1,874 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 680,
+  "BaseWidth": 680,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "8d540a92-c518-4163-9815-992ffcd71598",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 680.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.4.7",
+    "Width": 680.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "BorderStyle": {
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2
+              },
+              "Height": 35.0,
+              "IsRectangleItem": true,
+              "Left": 339.5,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Start Finish Line",
+              "RenderingSkip": 0,
+              "Top": 25.0,
+              "Visible": true,
+              "Width": 1.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return ( $prop('DataCorePlugin.GameData.Flag_Checkered') ) ? 'FINISH' : 'START'",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "Height": 20.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 290.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Start Finish Label",
+              "RenderingSkip": 0,
+              "Text": "START",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 100.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "EllipseColor": "#FF808080",
+              "EllipseThickness": 1.0,
+              "FillColor": "#00FFFFFF",
+              "Height": 560.0,
+              "Left": 60.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Base Ellipse",
+              "RenderingSkip": 0,
+              "Top": 60.0,
+              "Visible": true,
+              "Width": 560.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 81920.0,
+          "Name": "Base",
+          "RenderingSkip": 8192,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Repetitions": {
+              "Formula": {
+                "Expression": "if ( ld_trackData() == null ) { return 1 };\r\nreturn ld_trackData()['turn'].length;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Rotation": {
+                  "Formula": {
+                    "Expression": "if ( ld_trackData() == null ) { return 0 };\r\n\r\nvar turnMarker = ld_trackData()['turn'][ repeatindex()-1 ]['marker']\r\nvar turnEnd = ld_trackData()['turn'][ repeatindex()-1 ]['end']\r\nvar turnStart = ld_trackData()['turn'][ repeatindex()-1 ]['start']\r\nvar marker = ( turnMarker ) ? turnMarker : turnStart + ( ( turnEnd - turnStart ) / 2);\r\n\r\nreturn marker * 360",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "ChildAlignmentHorizontal": 0,
+              "ChildAlignmentVertical": 0,
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "BorderStyle": {
+                    "BorderBottom": 2,
+                    "BorderLeft": 2,
+                    "BorderRight": 2,
+                    "BorderTop": 2
+                  },
+                  "Height": 20.0,
+                  "IsRectangleItem": true,
+                  "Left": 339.5,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Turn Line",
+                  "RenderingSkip": 0,
+                  "Top": 25.0,
+                  "Visible": true,
+                  "Width": 1.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Rotation": {
+                      "Formula": {
+                        "Expression": "if ( ld_trackData() == null ) { return 0 };\r\nreturn ld_trackData()['turn'][ repeatindex()-1 ]['marker'] * -360",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return repeatindex()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 16.0,
+                  "Height": 20.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 320.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Turn Number",
+                  "RenderingSkip": 0,
+                  "Text": "00",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "ChildsMargin": {},
+              "ChildsPositioning": 0,
+              "ChildsPositioningAlignment": 0,
+              "GroupPadding": {},
+              "Height": 680.0,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Turn Group",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 680.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Track Turns",
+          "PrepareRepetitions": true,
+          "RenderingSkip": 32,
+          "RepeatTopOffset": 0.0,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Repetitions": {
+              "Formula": {
+                "Expression": "return $prop('OpponentsCount')",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Rotation": {
+                  "Formula": {
+                    "Expression": "return drivertrackpositionpercent( repeatindex() )*360",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "if ( $prop('variable.graphMode') == 'class' ) {\r\n\treturn ( !driverisplayer( repeatindex() ) && drivercarclass(repeatindex()) == $prop('CarClass') ) ? true : false;\r\n} else {\r\n\treturn ( !driverisplayer( repeatindex() ) ) ? true : false;\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "ChildAlignmentHorizontal": 0,
+              "ChildAlignmentVertical": 0,
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "EllipseColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasstextcolor( repeatindex() )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "FillColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasscolor( repeatindex() )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "EllipseColor": "#FF000000",
+                  "EllipseThickness": 3.0,
+                  "FillColor": "#FFFFFFFF",
+                  "Height": 30.0,
+                  "Left": 285.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Opponent Ellipse",
+                  "RenderingSkip": 0,
+                  "Top": 5.0,
+                  "Visible": true,
+                  "Width": 30.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Rotation": {
+                      "Formula": {
+                        "Expression": "// return drivertrackpositionpercent( repeatindex() )* -360",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return repeatindex()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasstextcolor( repeatindex() )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 13.0,
+                  "FontWeight": "Bold",
+                  "Height": 40.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 280.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Opponent Number",
+                  "RenderingSkip": 0,
+                  "Text": "00",
+                  "TextColor": "#FF000000",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "ChildsMargin": {},
+              "ChildsPositioning": 0,
+              "ChildsPositioningAlignment": 0,
+              "GroupPadding": {},
+              "Height": 600.0,
+              "Left": 40.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "All Opponents",
+              "RenderingSkip": 0,
+              "Top": 40.0,
+              "Visible": false,
+              "Width": 600.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 10.0,
+          "Name": "Opponnents",
+          "PrepareRepetitions": true,
+          "RenderingSkip": 1,
+          "RepeatTopOffset": 0.0,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Rotation": {
+                  "Formula": {
+                    "Expression": "return drivertrackpositionpercent( getplayerleaderboardposition() )*360",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "ChildAlignmentHorizontal": 0,
+              "ChildAlignmentVertical": 0,
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+                  "Bindings": {
+                    "Repetitions": {
+                      "Formula": {
+                        "Expression": "var carClass = lcase( drivercarclass( getplayerleaderboardposition() ) );\r\n\r\nif ( \r\n\tcarClass == null ||\r\n\tld_trackData() == null || \r\n\tld_trackData()['time'] == null || \r\n\tld_trackData()['time'][0][carClass] == null ) { \r\n\treturn false\r\n}\r\n\r\nreturn Object.keys(ld_trackData()['time'][0][carClass]).length;",
+                        "Interpreter": 1,
+                        "JSExt": 1,
+                        "PreExpression": "const carClass = lcase(ld_getCarClass($prop('CarClass')));"
+                      },
+                      "Mode": 2
+                    },
+                    "Visible": {
+                      "Formula": {
+                        "Expression": "var driverBestLap = timespantoseconds(driverbestlap(repeatindex()));\r\nvar driverLastLap = timespantoseconds(driverlastlap(repeatindex()));\r\nvar carClass = lcase( drivercarclass( getplayerleaderboardposition() ) );\r\n\r\nif ( \r\n\tcarClass == null ||\r\n\tld_trackData() == null || \r\n\tld_trackData()['time'] == null || \r\n\tld_trackData()['time'][0][carClass] == null ) { \r\n\treturn false\r\n}\r\n\r\nvar hasTime = (ld_trackData()['time'][0][carClass]) ? true : false;\r\nreturn !ld_isQuali() && hasTime && ( driverBestLap > 0 || driverLastLap > 0 );",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Childrens": [
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "BorderStyle": {
+                        "BorderColor": "#FF696969"
+                      },
+                      "Height": 600.0,
+                      "IsRectangleItem": true,
+                      "Left": 0.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "RectangleItem",
+                      "RenderingSkip": 0,
+                      "Top": 0.0,
+                      "Visible": true,
+                      "Width": 600.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.CircularGaugeItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "CircleGaugeBackgroundColor": {
+                          "Formula": {
+                            "Expression": "return delayRingColor[ repeatindex()-1 ];",
+                            "Interpreter": 1,
+                            "JSExt": 1
+                          },
+                          "Mode": 2
+                        },
+                        "Height": {
+                          "Formula": {
+                            "Expression": "return 510 - (repeatindex()-1)*30",
+                            "Interpreter": 1,
+                            "JSExt": 1
+                          },
+                          "Mode": 2
+                        },
+                        "Left": {
+                          "Formula": {
+                            "Expression": "return (repeatindex()-1)*15 + 45",
+                            "Interpreter": 1,
+                            "JSExt": 1
+                          },
+                          "Mode": 2
+                        },
+                        "Top": {
+                          "Formula": {
+                            "Expression": "return (repeatindex()-1)*15 + 45",
+                            "Interpreter": 1,
+                            "JSExt": 1
+                          },
+                          "Mode": 2
+                        },
+                        "Value": {
+                          "Formula": {
+                            "Expression": "// Get Driver Data\r\nvar driverBestLap = timespantoseconds(driverbestlap(repeatindex()));\r\nvar driverLastLap = timespantoseconds(driverlastlap(repeatindex()));\r\nvar driverLap = ( driverBestLap > 0 ) ? driverBestLap : driverLastLap;\r\n\r\nif ( \r\n\tdriverLap == null ||\r\n\tld_trackData() == null || \r\n\tld_trackData()['time'] == null || \r\n\tld_trackData()['time'][0][carClass] == null ||\r\n\tld_trackData()['time'][0][carClass][ repeatindex()-1 ]['time'] == null) { \r\n\treturn 0\r\n}\r\n\r\n// Get Time Delay\r\nvar timeDelay = ld_trackData()['time'][0][carClass][ repeatindex()-1 ]['time'];\r\nvar pitTimePerc = ( (100/driverLap) * timeDelay/100 > 360 ) ? 360 : (100/driverLap) * timeDelay/100;\r\n\r\nreturn Math.round( 360 - pitTimePerc * 360 );",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "const carClass = lcase( ld_getCarClass( $prop('CarClass') ) );"
+                          },
+                          "Mode": 2
+                        },
+                        "Width": {
+                          "Formula": {
+                            "Expression": "return 510 - (repeatindex()-1)*30",
+                            "Interpreter": 1,
+                            "JSExt": 1
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "CircleGaugeBackgroundColor": "#FFB58100",
+                      "CircleGaugeColor": "#FF000000",
+                      "Height": 510.0,
+                      "Left": 45.0,
+                      "MaxAngle": 360.0,
+                      "MaxValue": 360.0,
+                      "MinAngle": 0.0,
+                      "MinValue": 0.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Graph",
+                      "RenderingSkip": 0,
+                      "Steps": 360.0,
+                      "StrokeThickness": 10.0,
+                      "Top": 45.0,
+                      "Value": 120.0,
+                      "ValueEx": 120.0,
+                      "Visible": true,
+                      "Width": 510.0
+                    },
+                    {
+                      "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                      "BackgroundColor": "#00FFFFFF",
+                      "Bindings": {
+                        "Text": {
+                          "Formula": {
+                            "Expression": "if ( \r\n\tld_trackData() == null || \r\n\tld_trackData()['time'] == null || \r\n\tld_trackData()['time'][0][carClass] == null ||\r\n\tld_trackData()['time'][0][carClass][ repeatindex()-1 ]['name'] == null ) { \r\n\treturn '--'\r\n}\r\n\r\nreturn ucase( ld_trackData()['time'][0][carClass][ repeatindex()-1 ]['name'] );",
+                            "Interpreter": 1,
+                            "JSExt": 1,
+                            "PreExpression": "const carClass = lcase( ld_getCarClass( $prop('CarClass') ) );"
+                          },
+                          "Mode": 2
+                        },
+                        "TextColor": {
+                          "Formula": {
+                            "Expression": "return '#ffffffff';",
+                            "Interpreter": 1,
+                            "JSExt": 1
+                          },
+                          "Mode": 2
+                        },
+                        "Top": {
+                          "Formula": {
+                            "Expression": "return (repeatindex()-1)*15 + 46",
+                            "Interpreter": 1,
+                            "JSExt": 1
+                          },
+                          "Mode": 2
+                        }
+                      },
+                      "Font": "Roboto",
+                      "FontSize": 12.0,
+                      "FontWeight": "Medium",
+                      "Height": 10.0,
+                      "HorizontalAlignment": 0,
+                      "IsTextItem": true,
+                      "Left": 305.0,
+                      "MinimumRefreshIntervalMS": 0.0,
+                      "Name": "Label",
+                      "RenderingSkip": 0,
+                      "Text": "Label",
+                      "TextColor": "#FFFFB600",
+                      "Top": 45.0,
+                      "VerticalAlignment": 1,
+                      "Visible": true,
+                      "Width": 50.0
+                    }
+                  ],
+                  "Group": true,
+                  "MinimumRefreshIntervalMS": 320.0,
+                  "Name": "Graphs",
+                  "PrepareRepetitions": true,
+                  "RenderingSkip": 32,
+                  "RepeatTopOffset": 0.0,
+                  "Repetitions": 0,
+                  "Visible": true
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.EllipseItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "EllipseColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasstextcolor( getplayerleaderboardposition() )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "FillColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasscolor( getplayerleaderboardposition() )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "EllipseColor": "#FF000000",
+                  "EllipseThickness": 3.0,
+                  "FillColor": "#FFFFE04C",
+                  "Height": 40.0,
+                  "Left": 280.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Driver Ellipse",
+                  "RenderingSkip": 0,
+                  "Top": 0.0,
+                  "Visible": true,
+                  "Width": 40.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Rotation": {
+                      "Formula": {
+                        "Expression": "//return drivertrackpositionpercent( getplayerleaderboardposition() )* -360",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return getplayerleaderboardposition()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "return drivercarclasstextcolor( getplayerleaderboardposition() )",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 18.0,
+                  "FontWeight": "Bold",
+                  "Height": 40.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 280.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Driver Number",
+                  "RenderingSkip": 0,
+                  "Text": "00",
+                  "TextColor": "#FF000000",
+                  "Top": 0.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "ChildsMargin": {},
+              "ChildsPositioning": 0,
+              "ChildsPositioningAlignment": 0,
+              "GroupPadding": {},
+              "Height": 600.0,
+              "Left": 40.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Driver Group",
+              "RenderingSkip": 0,
+              "Top": 40.0,
+              "Visible": true,
+              "Width": 600.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 10.0,
+          "Name": "Driver",
+          "RenderingSkip": 1,
+          "RepeatTopOffset": 0.0,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Repetitions": {
+              "Formula": {
+                "Expression": "return ld_sectorCount()-1",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GroupItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Rotation": {
+                  "Formula": {
+                    "Expression": "if ( \r\n\tld_trackData() == null || \r\n\tld_trackData()['sector'] == null || \r\n\tld_trackData()['sector'][ repeatindex()-1 ]['marker'] == null ) { \r\n\treturn false\r\n}\r\n\r\nreturn ld_trackData()['sector'][ repeatindex()-1 ]['marker'] * 360",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "ChildAlignmentHorizontal": 0,
+              "ChildAlignmentVertical": 0,
+              "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "BorderStyle": {
+                    "BorderBottom": 2,
+                    "BorderLeft": 2,
+                    "BorderRight": 2,
+                    "BorderTop": 2
+                  },
+                  "Height": 60.0,
+                  "IsRectangleItem": true,
+                  "Left": 339.5,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Sector Line",
+                  "RenderingSkip": 0,
+                  "Top": 80.0,
+                  "Visible": true,
+                  "Width": 1.0
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "BackgroundColor": "#00FFFFFF",
+                  "Bindings": {
+                    "Rotation": {
+                      "Formula": {
+                        "Expression": "if ( \r\n\tld_trackData() == null || \r\n\tld_trackData()['sector'] == null || \r\n\tld_trackData()['sector'][ repeatindex()-1 ]['marker'] == null ) { \r\n\treturn false\r\n}\r\n\r\nreturn ld_trackData()['sector'][ repeatindex()-1 ]['marker'] * -360",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    },
+                    "Text": {
+                      "Formula": {
+                        "Expression": "return \"S\" + repeatindex()",
+                        "Interpreter": 1,
+                        "JSExt": 1
+                      },
+                      "Mode": 2
+                    }
+                  },
+                  "Font": "Roboto",
+                  "FontSize": 16.0,
+                  "Height": 20.0,
+                  "HorizontalAlignment": 1,
+                  "IsTextItem": true,
+                  "Left": 320.0,
+                  "MinimumRefreshIntervalMS": 0.0,
+                  "Name": "Sector Name",
+                  "RenderingSkip": 0,
+                  "Text": "S0",
+                  "TextColor": "#FFFFFFFF",
+                  "Top": 145.0,
+                  "VerticalAlignment": 1,
+                  "Visible": true,
+                  "Width": 40.0
+                }
+              ],
+              "ChildsMargin": {},
+              "ChildsPositioning": 0,
+              "ChildsPositioningAlignment": 0,
+              "GroupPadding": {},
+              "Height": 680.0,
+              "IsFreezed": true,
+              "Left": 0.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Sector Group",
+              "RenderingSkip": 0,
+              "Top": 0.0,
+              "Visible": true,
+              "Width": 680.0
+            }
+          ],
+          "Group": true,
+          "IsFreezed": true,
+          "MinimumRefreshIntervalMS": 320.0,
+          "Name": "Sectors",
+          "PrepareRepetitions": true,
+          "RenderingSkip": 32,
+          "RepeatTopOffset": 0.0,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.GeneratedStaticMapItem, SimHub.Plugins",
+          "AlternateTrackSectorColor": "#FFD3D3D3",
+          "BackgroundColor": "#00FFFFFF",
+          "BlinkDelay": 249.0,
+          "CursorColor": "#FFFF0000",
+          "DisplayScale": 1.0,
+          "ForcePlayerDotBorderContrastWhenUsingCarClassColors": true,
+          "Height": 370.0,
+          "IsFreezed": true,
+          "KeepMapDefinedClassColorsInSingleClass": false,
+          "Left": 155.0,
+          "MapShadow": false,
+          "MinimumRefreshIntervalMS": 10.0,
+          "MinimumTrackBorderWidth": 0.0,
+          "MinimumTrackWidth": 6.0,
+          "Name": "Small Map",
+          "OpponentStyle": {
+            "DotBorderThickness": 2.0,
+            "DotBordercolor": "#FF000000",
+            "DotColor": "#FFFFFFFF",
+            "DotRadius": 18.0,
+            "LabelColor": "#FF000000",
+            "LabelFont": "Roboto",
+            "LabelFontSize": 12.0
+          },
+          "OverrideColorsWithCarClassColors": true,
+          "PlayerStyle": {
+            "DotBorderThickness": 2.0,
+            "DotBordercolor": "#FF000000",
+            "DotColor": "#FFFFE04C",
+            "DotRadius": 22.0,
+            "LabelColor": "#FF000000",
+            "LabelFont": "Roboto",
+            "LabelFontSize": 12.0
+          },
+          "RenderImageHeight": 277.0386619480754,
+          "RenderImageWidth": 369.0515027394939,
+          "RenderingSkip": 1,
+          "StartLine": {
+            "Color": "#FFFFFFFF",
+            "Enabled": true,
+            "Height": 100.0,
+            "Width": 20.0
+          },
+          "Top": 155.0,
+          "TrackBorderColor": "#FFFFFFFF",
+          "TrackBorderWidth": 0.0,
+          "TrackColor": "#FF808080",
+          "TrackWidth": 6.0,
+          "Visible": true,
+          "Width": 370.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Race",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "4462e1c1-797f-4b7f-b252-f579f584392a"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "graphMode"
+      }
+    ]
+  },
+  "Version": 2
+}

@@ -1,0 +1,566 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 1989,
+  "BaseWidth": 1054,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "bdb4a67a-7633-4988-a759-5ea42422d78a",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 1989.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": true,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "Width": 1054.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "BackgroundColor": "#00FFFFFF",
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "ss\\.fff",
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn secondstotimespan($prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.LastSector3'))",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nconst fastestSector = $prop('GarySwallowDataPlugin.Overall.Sector3Best')\r\nconst driverLastSector = $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.LastSector3')*1000\r\nconst driverBestSector = $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.BestSector3')*1000\r\n\r\nif (driverLastSector == 0) {\r\n\treturn '#FFFFFF'\r\n} else if ( driverLastSector == fastestSector) {\r\n\treturn '#FFFFFF' \r\n} else if ( driverLastSector == driverBestSector ) {\r\n\treturn '#00FF02' // Green\r\n} else {\r\n\treturn '#FFE04C' // Yellow\r\n}\r\n\r\n\r\n\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 983.0,
+              "Name": "TextItem",
+              "Text": "00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "ss\\.fff",
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn secondstotimespan($prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.LastSector2'))",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nconst fastestSector = $prop('GarySwallowDataPlugin.Overall.Sector2Best')\r\nconst driverLastSector = $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.LastSector2')*1000\r\nconst driverBestSector = $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.BestSector2')*1000\r\n\r\nif (driverLastSector == 0) {\r\n\treturn '#FFFFFF'\r\n} else if ( driverLastSector == fastestSector) {\r\n\treturn '#FFFFFF' \r\n} else if ( driverLastSector == driverBestSector ) {\r\n\treturn '#00FF02' // Green\r\n} else {\r\n\treturn '#FFE04C' // Yellow\r\n}\r\n\r\n\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 903.0,
+              "Name": "TextItem",
+              "Text": "00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "ss\\.fff",
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn secondstotimespan($prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.LastSector1'))",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nconst fastestSector = $prop('GarySwallowDataPlugin.Overall.Sector1Best')\r\nconst driverLastSector = $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.LastSector1')*1000\r\nconst driverBestSector = $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.BestSector1')*1000\r\n\r\nif (driverLastSector == 0) {\r\n\treturn '#FFFFFF'\r\n} else if ( driverLastSector == fastestSector) {\r\n\treturn '#FFFFFF' \r\n} else if ( driverLastSector == driverBestSector ) {\r\n\treturn '#00FF02' // Green\r\n} else {\r\n\treturn '#FFE04C' // Yellow\r\n}\r\n\r\n\r\n\r\n",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 823.0,
+              "Name": "TextItem",
+              "Text": "00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 65.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\:ss\\.fff",
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn secondstotimespan($prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.LastLap'))",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (isplayer(repeatindex()+3), '#FFE04C', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 728.0,
+              "Name": "TextItem",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 80.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "m\\:ss\\.fff",
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn secondstotimespan($prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.BestLap'))",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (isplayer(repeatindex()+3), '#FFE04C', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 633.0,
+              "Name": "TextItem",
+              "Text": "0:00.000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 80.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0.00",
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nconst intervalGap = $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.IntervalGap')\r\n\r\nif (intervalGap >= 100) {\r\n\treturn format(intervalGap, '0.0')\r\n} else {\r\n\treturn format(intervalGap, '0.00')\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (isplayer(repeatindex()+3), '#FFE04C', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 563.0,
+              "Name": "TextItem",
+              "Text": "0.0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 55.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "FormatString": "0",
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nconst gapToFirst = $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.GapToFirstDelayed')\r\n\r\nif (gapToFirst >= 100) {\r\n\treturn format(gapToFirst, '0.0')\r\n} else {\r\n\treturn format(gapToFirst, '0.00')\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (isplayer(repeatindex()+3), '#FFE04C', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 493.0,
+              "Name": "TextItem",
+              "Text": "0.0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 55.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.TotalLaps')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (isplayer(repeatindex()+3), '#FFE04C', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 438.0,
+              "Name": "TextItem",
+              "Text": "000",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn 'L'+$prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.LastPitLap')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (isplayer(repeatindex()+3), '#FFE04C', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 340.0,
+              "Name": "TextItem",
+              "Text": "L0",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 84.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "return ld_GetDriverName(repeatindex()+3)",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (isplayer(repeatindex()+3), '#FFE04C', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 0,
+              "IsTextItem": true,
+              "Left": 85.0,
+              "Name": "TextItem",
+              "Text": "F. Lastname",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 245.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFF0000",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.PenaltyLastReceived')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.PenaltyLastReceived')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Visible"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 2,
+                "RadiusBottomRight": 2,
+                "RadiusTopLeft": 2,
+                "RadiusTopRight": 2
+              },
+              "Font": "Roboto",
+              "FontSize": 16.0,
+              "FontWeight": "Bold",
+              "Height": 22.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 280.0,
+              "Name": "TextItem",
+              "Text": "PEN",
+              "TextColor": "#FFFFFFFF",
+              "Top": 4.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 46.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "const driver = format(repeatindex()+3, '00')\r\nreturn $prop('GarySwallowDataPlugin.Leaderboard.Position'+driver+'.CarNumber')",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "if (isplayer(repeatindex()+3), '#FFE04C', '#FFFFFF')"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 30.0,
+              "HorizontalAlignment": 2,
+              "IsTextItem": true,
+              "Left": 35.0,
+              "Name": "TextItem",
+              "Text": "###",
+              "TextColor": "#FFFFFFFF",
+              "Top": 0.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 40.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FFFFFFFF",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "const fastestLap = $prop('GarySwallowDataPlugin.Overall.FastestLapDriverTime')\r\nconst currentDriver = format(repeatindex()+3, '00')\r\nconst currentDriverLap = secondstotimespan($prop('GarySwallowDataPlugin.Leaderboard.Position'+currentDriver+'.BestLap'))\r\n\r\n\r\nif ( fastestLap == currentDriverLap) {\r\n\treturn '#C500CE'\r\n} else if ($prop('GarySwallowDataPlugin.ObservedDriver.Position') == repeatindex()+3) {\r\n\treturn '#FFE04C'\r\n} else {\r\n\treturn '#ffffff'\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "BackgroundColor"
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "repeatindex()+3"
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "Text"
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "const fastestLap = $prop('GarySwallowDataPlugin.Overall.FastestLapDriverTime')\r\nconst currentDriver = format(repeatindex()+3, '00')\r\nconst currentDriverLap = secondstotimespan($prop('GarySwallowDataPlugin.Leaderboard.Position'+currentDriver+'.BestLap'))\r\n\r\n\r\nif ( fastestLap == currentDriverLap) {\r\n\treturn '#FFFFFF'\r\n} else {\r\n\treturn '#000000'\r\n}",
+                    "Interpreter": 1
+                  },
+                  "Mode": 2,
+                  "TargetPropertyName": "TextColor"
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 4,
+                "RadiusBottomRight": 4,
+                "RadiusTopLeft": 4,
+                "RadiusTopRight": 4
+              },
+              "Font": "Roboto",
+              "FontSize": 20.0,
+              "FontWeight": "Bold",
+              "Height": 28.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 0.0,
+              "Name": "TextItem",
+              "Text": "#",
+              "TextColor": "#FF000000",
+              "Top": 1.0,
+              "VerticalAlignment": 1,
+              "Visible": true,
+              "Width": 28.0
+            }
+          ],
+          "Group": true,
+          "Height": 30.0,
+          "Left": 0.0,
+          "Name": "Driver 4-60",
+          "RepeatTopOffset": 35.0,
+          "Repetitions": 16.0,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 1048.0
+        }
+      ],
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "1592a490-cad3-4c70-b5f0-5a574f1f289c"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": []
+  },
+  "Version": 2
+}

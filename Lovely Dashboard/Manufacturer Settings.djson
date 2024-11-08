@@ -1,0 +1,160 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 480,
+  "BaseWidth": 850,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": false,
+  "Id": "4bbbeed8-93b4-4555-b490-dbd845d61c50",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 480.0,
+    "IdleScreensIndexs": [
+      0
+    ],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.3.1",
+    "Width": 850.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": true,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( \r\n\t// Check for compatible Steering Wheels\r\n\t(\r\n\t\t// All Artura USB Models\r\n\t\tgetcontrollername('0x35EE,*')\r\n\t\t&& \r\n\t\t(\r\n\t\t\tgetcontrollerbuttonstate('0x35EE,*', 76) || // Bite Point Mode\r\n\t\t\tgetcontrollerbuttonstate('0x35EE,*', 77) || // Clutch Calibration\r\n\t\t\tgetcontrollerbuttonstate('0x35EE,*', 78)    // Analoge Input Mode\r\n\t\t)\r\n\t)\r\n) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "EnableScreenRolesAndActivation": true,
+          "FileName": "Ascher Settings.djson",
+          "FreezePageChanges": false,
+          "Height": 480.0,
+          "InitialScreenIndex": 0,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Ascher Settings",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "RenderingSkip": 0,
+          "Top": 0.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 850.0
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.WidgetItem, SimHub.Plugins",
+          "AutoSize": true,
+          "BackgroundColor": "#00FFFFFF",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return ( \r\n\t// Check for compatible Steering Wheels\r\n\t(\r\n\t\t// All Greywolf Devices\r\n\t\tgetcontrollername('0x9988,*')\r\n\t\t&& \r\n\t\t(\r\n\t\t\tgetcontrollerbuttonstate('0x9988,*', 45) // Bite Point Mode\r\n\t\t)\r\n\t)\r\n) ? true : false;",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "EnableScreenRolesAndActivation": true,
+          "FileName": "Greywolf Settings.djson",
+          "FreezePageChanges": false,
+          "Height": 480.0,
+          "InitialScreenIndex": 0,
+          "Left": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "Greywolf Settings",
+          "NextScreenCommand": 0,
+          "PreviousScreenCommand": 0,
+          "RenderingSkip": 0,
+          "Top": 0.0,
+          "Variables": {
+            "DashboardVariables": []
+          },
+          "Visible": true,
+          "Width": 850.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "26369773-1429-417d-b4ec-d256b3f85bc2"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": true,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "ar_aimState"
+      }
+    ]
+  },
+  "Version": 2
+}

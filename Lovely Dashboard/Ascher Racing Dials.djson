@@ -1,0 +1,504 @@
+{
+  "BackgroundColor": "#FF000000",
+  "BackgroundOpacity": 100.0,
+  "BaseHeight": 480,
+  "BaseWidth": 850,
+  "DashboardDebugManager": {},
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true,
+  "ForegroundOpacity": 100.0,
+  "GridSize": 10,
+  "HideLabels": true,
+  "Id": "5bfcfe00-cb76-44bc-829a-5942067dfe2b",
+  "Images": [],
+  "IsOverlay": false,
+  "Metadata": {
+    "EnableOnDashboardMessaging": true,
+    "Height": 480.0,
+    "IdleScreensIndexs": [],
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IsOverlay": false,
+    "MainPreviewIndex": 0,
+    "MetadataVersion": 2.0,
+    "OverlaySizeWarning": false,
+    "PitScreensIndexs": [],
+    "ScreenCount": 1.0,
+    "SimHubVersion": "9.4.9",
+    "Width": 850.0
+  },
+  "Screens": [
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#FF000000",
+      "IdleScreen": false,
+      "InGameScreen": true,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return AR_is_rotary_right_shift_mode_active();",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBgAlt');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "let rotary_right_text = {}\r\nrotary_right_text[0] = $prop('LovelyPlugin.ld_AscherRightDialPosition1');\r\nrotary_right_text[1] = $prop('LovelyPlugin.ld_AscherRightDialPosition2');\r\nrotary_right_text[2] = $prop('LovelyPlugin.ld_AscherRightDialPosition3');\r\nrotary_right_text[3] = $prop('LovelyPlugin.ld_AscherRightDialPosition4');\r\nrotary_right_text[4] = $prop('LovelyPlugin.ld_AscherRightDialPosition5');\r\nrotary_right_text[5] = $prop('LovelyPlugin.ld_AscherRightDialPosition6');\r\nrotary_right_text[6] = $prop('LovelyPlugin.ld_AscherRightDialPosition7');\r\nrotary_right_text[7] = $prop('LovelyPlugin.ld_AscherRightDialPosition8');\r\nrotary_right_text[8] = $prop('LovelyPlugin.ld_AscherRightDialPosition9');\r\nrotary_right_text[9] = $prop('LovelyPlugin.ld_AscherRightDialPosition10');\r\nrotary_right_text[10] = $prop('LovelyPlugin.ld_AscherRightDialPosition11');\r\nrotary_right_text[11] = $prop('LovelyPlugin.ld_AscherRightDialPosition12');\r\n\r\nreturn AR_get_rotary_right_output( rotary_right_text );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "let alertDelay = $prop('LovelyPlugin.ld_AlertDelay');\r\nlet rotary_right_text = {}\r\nrotary_right_text[0] = $prop('LovelyPlugin.ld_AscherRightDialPosition1');\r\nrotary_right_text[1] = $prop('LovelyPlugin.ld_AscherRightDialPosition2');\r\nrotary_right_text[2] = $prop('LovelyPlugin.ld_AscherRightDialPosition3');\r\nrotary_right_text[3] = $prop('LovelyPlugin.ld_AscherRightDialPosition4');\r\nrotary_right_text[4] = $prop('LovelyPlugin.ld_AscherRightDialPosition5');\r\nrotary_right_text[5] = $prop('LovelyPlugin.ld_AscherRightDialPosition6');\r\nrotary_right_text[6] = $prop('LovelyPlugin.ld_AscherRightDialPosition7');\r\nrotary_right_text[7] = $prop('LovelyPlugin.ld_AscherRightDialPosition8');\r\nrotary_right_text[8] = $prop('LovelyPlugin.ld_AscherRightDialPosition9');\r\nrotary_right_text[9] = $prop('LovelyPlugin.ld_AscherRightDialPosition10');\r\nrotary_right_text[10] = $prop('LovelyPlugin.ld_AscherRightDialPosition11');\r\nrotary_right_text[11] = $prop('LovelyPlugin.ld_AscherRightDialPosition12');\r\n\r\nreturn ld_changed( alertDelay, AR_get_rotary_right_output( rotary_right_text ) );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FF00BFFF",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 60.0,
+              "FontWeight": "Bold",
+              "Height": 240.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 535.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Right Alert",
+              "RenderingSkip": 0,
+              "Text": "LABEL",
+              "TextColor": "#FFFFFFFF",
+              "TextPadding": {
+                "PaddingBottom": 20,
+                "PaddingLeft": 20,
+                "PaddingRight": 20,
+                "PaddingTop": 20
+              },
+              "TextWrapping": 0,
+              "Top": 120.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 300.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBg');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomLeft": 8,
+                "RadiusTopLeft": 8
+              },
+              "Height": 110.0,
+              "IsRectangleItem": true,
+              "Left": 828.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Standings Outline",
+              "RenderingSkip": 0,
+              "Top": 185.0,
+              "Visible": true,
+              "Width": 26.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Opacity": {
+                  "Formula": {
+                    "Expression": "switch ( $prop('LovelyPlugin.ld_UIMode') ) {\r\n\tcase 0: return 20 // Low\r\n\tcase 1: return 45 // Medium\r\n\tcase 2: return 100 // High\r\n\tdefault: return 100\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ( $prop('LovelyPlugin.ld_PitAlert') && $prop('DataCorePlugin.GameData.IsInPitLane') ) ? ld_theme('ld_uiPitLimiter') : ld_theme('ld_uiLine')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomLeft": 8,
+                "RadiusTopLeft": 8
+              },
+              "Height": 110.0,
+              "IsRectangleItem": true,
+              "Left": 828.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Standings Outline2",
+              "RenderingSkip": 0,
+              "Top": 185.0,
+              "Visible": true,
+              "Width": 26.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "let rotary_right_text = {};\r\nrotary_right_text[0] = $prop('LovelyPlugin.ld_AscherRightDialPosition1');\r\nrotary_right_text[1] = $prop('LovelyPlugin.ld_AscherRightDialPosition2');\r\nrotary_right_text[2] = $prop('LovelyPlugin.ld_AscherRightDialPosition3');\r\nrotary_right_text[3] = $prop('LovelyPlugin.ld_AscherRightDialPosition4');\r\nrotary_right_text[4] = $prop('LovelyPlugin.ld_AscherRightDialPosition5');\r\nrotary_right_text[5] = $prop('LovelyPlugin.ld_AscherRightDialPosition6');\r\nrotary_right_text[6] = $prop('LovelyPlugin.ld_AscherRightDialPosition7');\r\nrotary_right_text[7] = $prop('LovelyPlugin.ld_AscherRightDialPosition8');\r\nrotary_right_text[8] = $prop('LovelyPlugin.ld_AscherRightDialPosition9');\r\nrotary_right_text[9] = $prop('LovelyPlugin.ld_AscherRightDialPosition10');\r\nrotary_right_text[10] = $prop('LovelyPlugin.ld_AscherRightDialPosition11');\r\nrotary_right_text[11] = $prop('LovelyPlugin.ld_AscherRightDialPosition12');\r\n\r\nreturn AR_get_rotary_right_output( rotary_right_text );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusTopLeft": 8,
+                "RadiusTopRight": 8
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 789.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Right Rotary",
+              "RenderingSkip": 0,
+              "Rotation": -90.0,
+              "ShadowColor": "#FF000000",
+              "Text": "RIGHT",
+              "TextColor": "#FFFFFFFF",
+              "Top": 227.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 106.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 10.0,
+          "Name": "Right Dial",
+          "RenderingSkip": 1,
+          "Repetitions": 0,
+          "Visible": true
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "return AR_is_rotary_left_shift_mode_active();",
+                "Interpreter": 1,
+                "JSExt": 1
+              },
+              "Mode": 2
+            }
+          },
+          "Childrens": [
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#FF212121",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBgAlt');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Text": {
+                  "Formula": {
+                    "Expression": "let rotary_left_text = {};\r\n\r\nrotary_left_text[0] = $prop('LovelyPlugin.ld_AscherLeftDialPosition1');\r\nrotary_left_text[1] = $prop('LovelyPlugin.ld_AscherLeftDialPosition2');\r\nrotary_left_text[2] = $prop('LovelyPlugin.ld_AscherLeftDialPosition3');\r\nrotary_left_text[3] = $prop('LovelyPlugin.ld_AscherLeftDialPosition4');\r\nrotary_left_text[4] = $prop('LovelyPlugin.ld_AscherLeftDialPosition5');\r\nrotary_left_text[5] = $prop('LovelyPlugin.ld_AscherLeftDialPosition6');\r\nrotary_left_text[6] = $prop('LovelyPlugin.ld_AscherLeftDialPosition7');\r\nrotary_left_text[7] = $prop('LovelyPlugin.ld_AscherLeftDialPosition8');\r\nrotary_left_text[8] = $prop('LovelyPlugin.ld_AscherLeftDialPosition9');\r\nrotary_left_text[9] = $prop('LovelyPlugin.ld_AscherLeftDialPosition10');\r\nrotary_left_text[10] = $prop('LovelyPlugin.ld_AscherLeftDialPosition11');\r\nrotary_left_text[11] = $prop('LovelyPlugin.ld_AscherLeftDialPosition12');\r\n\r\nreturn AR_get_rotary_left_output( rotary_left_text );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle')",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "Visible": {
+                  "Formula": {
+                    "Expression": "let alertDelay = $prop('LovelyPlugin.ld_AlertDelay');\r\nlet rotary_left_text = {};\r\n\r\nrotary_left_text[0] = $prop('LovelyPlugin.ld_AscherLeftDialPosition1');\r\nrotary_left_text[1] = $prop('LovelyPlugin.ld_AscherLeftDialPosition2');\r\nrotary_left_text[2] = $prop('LovelyPlugin.ld_AscherLeftDialPosition3');\r\nrotary_left_text[3] = $prop('LovelyPlugin.ld_AscherLeftDialPosition4');\r\nrotary_left_text[4] = $prop('LovelyPlugin.ld_AscherLeftDialPosition5');\r\nrotary_left_text[5] = $prop('LovelyPlugin.ld_AscherLeftDialPosition6');\r\nrotary_left_text[6] = $prop('LovelyPlugin.ld_AscherLeftDialPosition7');\r\nrotary_left_text[7] = $prop('LovelyPlugin.ld_AscherLeftDialPosition8');\r\nrotary_left_text[8] = $prop('LovelyPlugin.ld_AscherLeftDialPosition9');\r\nrotary_left_text[9] = $prop('LovelyPlugin.ld_AscherLeftDialPosition10');\r\nrotary_left_text[10] = $prop('LovelyPlugin.ld_AscherLeftDialPosition11');\r\nrotary_left_text[11] = $prop('LovelyPlugin.ld_AscherLeftDialPosition12');\r\n\r\nreturn ld_changed( alertDelay, AR_get_rotary_left_output(rotary_left_text) );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "BorderColor": "#FF00BFFF",
+                "RadiusBottomLeft": 5,
+                "RadiusBottomRight": 5,
+                "RadiusTopLeft": 5,
+                "RadiusTopRight": 5
+              },
+              "Font": "Roboto",
+              "FontSize": 60.0,
+              "FontWeight": "Bold",
+              "Height": 240.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": 15.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Left Alert",
+              "RenderingSkip": 0,
+              "Text": "LABEL",
+              "TextColor": "#FFFFFFFF",
+              "TextPadding": {
+                "PaddingBottom": 20,
+                "PaddingLeft": 20,
+                "PaddingRight": 20,
+                "PaddingTop": 20
+              },
+              "TextWrapping": 0,
+              "Top": 120.0,
+              "VerticalAlignment": 1,
+              "Visible": false,
+              "Width": 300.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#FF000000",
+              "Bindings": {
+                "BackgroundColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiBg');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "RadiusBottomRight": 8,
+                "RadiusTopRight": 8
+              },
+              "Height": 110.0,
+              "IsRectangleItem": true,
+              "Left": -4.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Standings Outline",
+              "RenderingSkip": 0,
+              "Top": 185.0,
+              "Visible": true,
+              "Width": 26.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Opacity": {
+                  "Formula": {
+                    "Expression": "switch ( $prop('LovelyPlugin.ld_UIMode') ) {\r\n\tcase 0: return 20 // Low\r\n\tcase 1: return 45 // Medium\r\n\tcase 2: return 100 // High\r\n\tdefault: return 100\r\n}",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "Bindings": {
+                  "BorderColor": {
+                    "Formula": {
+                      "Expression": "return ( $prop('LovelyPlugin.ld_PitAlert') && $prop('DataCorePlugin.GameData.IsInPitLane') ) ? ld_theme('ld_uiPitLimiter') : ld_theme('ld_uiLine')",
+                      "Interpreter": 1,
+                      "JSExt": 1
+                    },
+                    "Mode": 2
+                  }
+                },
+                "BorderBottom": 2,
+                "BorderLeft": 2,
+                "BorderRight": 2,
+                "BorderTop": 2,
+                "RadiusBottomRight": 8,
+                "RadiusTopRight": 8
+              },
+              "Height": 110.0,
+              "IsRectangleItem": true,
+              "Left": -4.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Standings Outline",
+              "RenderingSkip": 0,
+              "Top": 185.0,
+              "Visible": true,
+              "Width": 26.0
+            },
+            {
+              "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+              "BackgroundColor": "#00FFFFFF",
+              "Bindings": {
+                "Text": {
+                  "Formula": {
+                    "Expression": "let rotary_left_text = {};\r\nrotary_left_text[0] = $prop('LovelyPlugin.ld_AscherLeftDialPosition1');\r\nrotary_left_text[1] = $prop('LovelyPlugin.ld_AscherLeftDialPosition2');\r\nrotary_left_text[2] = $prop('LovelyPlugin.ld_AscherLeftDialPosition3');\r\nrotary_left_text[3] = $prop('LovelyPlugin.ld_AscherLeftDialPosition4');\r\nrotary_left_text[4] = $prop('LovelyPlugin.ld_AscherLeftDialPosition5');\r\nrotary_left_text[5] = $prop('LovelyPlugin.ld_AscherLeftDialPosition6');\r\nrotary_left_text[6] = $prop('LovelyPlugin.ld_AscherLeftDialPosition7');\r\nrotary_left_text[7] = $prop('LovelyPlugin.ld_AscherLeftDialPosition8');\r\nrotary_left_text[8] = $prop('LovelyPlugin.ld_AscherLeftDialPosition9');\r\nrotary_left_text[9] = $prop('LovelyPlugin.ld_AscherLeftDialPosition10');\r\nrotary_left_text[10] = $prop('LovelyPlugin.ld_AscherLeftDialPosition11');\r\nrotary_left_text[11] = $prop('LovelyPlugin.ld_AscherLeftDialPosition12');\r\n\r\nreturn AR_get_rotary_left_output( rotary_left_text );",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                },
+                "TextColor": {
+                  "Formula": {
+                    "Expression": "return ld_theme('ld_uiTitle');",
+                    "Interpreter": 1,
+                    "JSExt": 1
+                  },
+                  "Mode": 2
+                }
+              },
+              "BorderStyle": {
+                "BorderBottom": 1,
+                "BorderColor": "#00FFFFFF",
+                "BorderLeft": 1,
+                "BorderRight": 1,
+                "BorderTop": 1,
+                "RadiusBottomLeft": 6,
+                "RadiusBottomRight": 6
+              },
+              "Font": "Roboto",
+              "FontSize": 18.0,
+              "FontWeight": "Bold",
+              "Height": 24.0,
+              "HorizontalAlignment": 1,
+              "IsTextItem": true,
+              "Left": -45.0,
+              "MinimumRefreshIntervalMS": 0.0,
+              "Name": "Left Rotary",
+              "RenderingSkip": 0,
+              "Rotation": -90.0,
+              "ShadowColor": "#FF000000",
+              "Text": "LEFT",
+              "TextColor": "#FFFFFFFF",
+              "TextPadding": {
+                "PaddingBottom": 2
+              },
+              "Top": 227.0,
+              "VerticalAlignment": 2,
+              "Visible": true,
+              "Width": 106.0
+            }
+          ],
+          "Group": true,
+          "MinimumRefreshIntervalMS": 10.0,
+          "Name": "Left Dial",
+          "RenderingSkip": 1,
+          "Repetitions": 0,
+          "Visible": true
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Screen",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "e7a25900-7a29-4650-b833-2742effe654d"
+    }
+  ],
+  "ShowBackground": true,
+  "ShowBoundingRectangles": false,
+  "ShowForeground": true,
+  "ShowOnScreenControls": true,
+  "SnapToGrid": false,
+  "Variables": {
+    "DashboardVariables": [
+      {
+        "EvaluateBeforeScreenRoles": true,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "folderName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": true,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "dashName"
+      },
+      {
+        "EvaluateBeforeScreenRoles": false,
+        "EvaluateOnlyOnce": false,
+        "OverrideWithParentDashboardVariableWhenAvailable": true,
+        "ValueExpression": {
+          "Expression": ""
+        },
+        "VariableName": "trueDarkMode"
+      }
+    ]
+  },
+  "Version": 2
+}
