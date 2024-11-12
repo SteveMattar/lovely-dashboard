@@ -705,7 +705,7 @@
                 },
                 "Text": {
                   "Formula": {
-                    "Expression": "return $prop('DataCorePlugin.GameData.Gear')",
+                    "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
                     "Interpreter": 1,
                     "JSExt": 1
                   },
@@ -1092,7 +1092,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -1336,7 +1338,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -1486,7 +1490,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -1636,7 +1642,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -2111,7 +2119,9 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.Gear]"
+                    "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
                   "Mode": 2
                 },
@@ -2544,7 +2554,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -2787,7 +2799,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -2936,7 +2950,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -3086,7 +3102,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -3607,7 +3625,9 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.Gear]"
+                    "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
                   "Mode": 2
                 },
@@ -3912,7 +3932,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -4154,7 +4176,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -4304,7 +4328,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -4454,7 +4480,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -4988,7 +5016,9 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.Gear]"
+                    "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
                   "Mode": 2
                 },
@@ -5408,7 +5438,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -5652,7 +5684,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -5802,7 +5836,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -5952,7 +5988,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -6569,7 +6607,7 @@
                 },
                 "Text": {
                   "Formula": {
-                    "Expression": "return $prop('DataCorePlugin.GameData.Gear')",
+                    "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
                     "Interpreter": 1,
                     "JSExt": 1
                   },
@@ -6913,7 +6951,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -7153,7 +7193,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -7300,7 +7342,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -7447,7 +7491,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -7952,7 +7998,9 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "[DataCorePlugin.GameData.Gear]"
+                    "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                    "Interpreter": 1,
+                    "JSExt": 0
                   },
                   "Mode": 2
                 },
@@ -8382,7 +8430,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -8622,7 +8672,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -8772,7 +8824,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -8923,7 +8977,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -9686,7 +9742,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return $prop('DataCorePlugin.GameData.Gear')",
+                    "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
                     "Interpreter": 1,
                     "JSExt": 1
                   },
@@ -10058,7 +10114,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -10302,7 +10360,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -10452,7 +10512,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -10602,7 +10664,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -11018,7 +11082,7 @@
               "Bindings": {
                 "Text": {
                   "Formula": {
-                    "Expression": "return $prop('DataCorePlugin.GameData.Gear')",
+                    "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
                     "Interpreter": 1,
                     "JSExt": 1
                   },
@@ -11509,7 +11573,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -11752,7 +11818,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -11901,7 +11969,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
@@ -12051,7 +12121,9 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "[DataCorePlugin.GameData.Gear]"
+                        "Expression": "return $prop('DataCorePlugin.GameData.CarSettings_MaxGears') == 1 && $prop('DataCorePlugin.GameData.Gear') == 1 ? 'D' : $prop('DataCorePlugin.GameData.Gear')",
+                        "Interpreter": 1,
+                        "JSExt": 0
                       },
                       "Mode": 2
                     },
