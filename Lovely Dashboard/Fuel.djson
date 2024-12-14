@@ -9,7 +9,7 @@
   "ForegroundOpacity": 100.0,
   "GridSize": 10,
   "HideLabels": true,
-  "Id": "f4d01844-77d1-48ac-bfae-bc7565f3a2b3",
+  "Id": "904d6ea9-6285-4ee1-af29-daeaeaf34a1c",
   "Images": [],
   "IsOverlay": false,
   "Metadata": {
@@ -30,14 +30,15 @@
     "MetadataVersion": 2.0,
     "OverlaySizeWarning": false,
     "PitScreensIndexs": [],
-    "ScreenCount": 3.0,
-    "SimHubVersion": "9.5.0",
+    "ScreenCount": 4.0,
+    "SimHubVersion": "9.6.2",
     "Width": 330.0
   },
   "Screens": [
     {
       "AllowOverlays": true,
       "BackgroundColor": "#FF000000",
+      "ForegroundLayerScreenId": "cb07aef2-da7a-40c7-9098-1e9dfc5b84be",
       "IdleScreen": true,
       "InGameScreen": true,
       "IsBackgroundLayer": false,
@@ -928,6 +929,7 @@
     {
       "AllowOverlays": true,
       "BackgroundColor": "#FF000000",
+      "ForegroundLayerScreenId": "cb07aef2-da7a-40c7-9098-1e9dfc5b84be",
       "IdleScreen": true,
       "InGameScreen": true,
       "IsBackgroundLayer": false,
@@ -1519,6 +1521,7 @@
     {
       "AllowOverlays": true,
       "BackgroundColor": "#FF000000",
+      "ForegroundLayerScreenId": "cb07aef2-da7a-40c7-9098-1e9dfc5b84be",
       "IdleScreen": true,
       "InGameScreen": true,
       "IsBackgroundLayer": false,
@@ -2281,6 +2284,81 @@
         "Expression": ""
       },
       "ScreenId": "e2f88db2-b53f-4657-9002-915419f743cb"
+    },
+    {
+      "AllowOverlays": true,
+      "BackgroundColor": "#00FFFFFF",
+      "IdleScreen": false,
+      "InGameScreen": false,
+      "IsBackgroundLayer": false,
+      "IsForegroundLayer": true,
+      "IsOverlayLayer": false,
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+          "AlternateGaugeColor": "#FFFF0000",
+          "AutoSize": false,
+          "BackgroundColor": "#FF141414",
+          "Bindings": {
+            "GaugeColor": {
+              "EnableMiddleColor": false,
+              "EndColor": "#FFFF0000",
+              "EndColorValue": 0.0,
+              "Formula": {
+                "Expression": "[FuelPercent]"
+              },
+              "MiddleColor": "#FF000000",
+              "MiddleColorValue": 1.0,
+              "Mode": 4,
+              "StartColor": "#FFFF8C00",
+              "StartColorValue": 100.0
+            },
+            "Value": {
+              "Formula": {
+                "Expression": "[FuelPercent]"
+              },
+              "Mode": 2
+            }
+          },
+          "BorderStyle": {
+            "RadiusBottomLeft": 5,
+            "RadiusBottomRight": 5,
+            "RadiusTopLeft": 5,
+            "RadiusTopRight": 5
+          },
+          "GaugeAlignment": 0,
+          "GaugeColor": "#FFFF8C00",
+          "GaugeOrientation": 0,
+          "Height": 5.0,
+          "IsLinearGauge": true,
+          "Left": 30.0,
+          "Maximum": 100.0,
+          "Minimum": 0.0,
+          "MinimumRefreshIntervalMS": 0.0,
+          "Name": "LinearGaugeItem",
+          "PAW": 56.0,
+          "RenderingSkip": 0,
+          "Steps": 0.0,
+          "Top": 20.0,
+          "UseAlternateStyle": false,
+          "Value": 20.0,
+          "Visible": true,
+          "Width": 280.0
+        }
+      ],
+      "MinimumRefreshIntervalMS": 0.0,
+      "Name": "Fuel %",
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "PitScreen": false,
+      "RenderingSkip": 0,
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "ScreenId": "cb07aef2-da7a-40c7-9098-1e9dfc5b84be"
     }
   ],
   "ShowBackground": true,
